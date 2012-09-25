@@ -8,21 +8,18 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    './left',
-    './right'
-], function($, _, Backbone, LeftView, RightView){
+    './org-tree'
+], function($, _, Backbone, OrgTreeView){
     return new Backbone.View.extend({
 
-        el: $("#page"),
+        className: 'split-left',
 
         initialize: function(){
 
         },
+
         render: function(){
-
-            this.el.append($(new LeftView().render().el));
-            this.el.append($(new RightView().render().el));
-
+            $(this.el).html($(new OrgTreeView().render().el));
             return this;
         }
     });

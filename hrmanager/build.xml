@@ -12,6 +12,7 @@
 	<property name="src.web.dir" value="web" />
 	<property name="jar.name" value="${ant.project.name}.jar" />
 	<property name="war.name" value="${ant.project.name}.war" />
+	<property name="tomcat.dir" value="/Users/lijun/java/apache-tomcat-6.0.33" />
 	
     <path id="Apache Tomcat v6.0 [Apache Tomcat v6.0].libraryclasspath">
         <pathelement location="../../../java/apache-tomcat-6.0.33/lib/annotations-api.jar"/>
@@ -105,6 +106,16 @@
 		 </war> 
 	</target>	
 	
+	<target name="copytotomcat" depends="initclean, copyweb, jar">
+		<echo>${ant.project.name} 复制网页到tomcat</echo>
+		<copy todir="${tomcat.dir}/webapps/hrmanager">
+			<fileset dir="${buildweb.dir}">
+				<include name="**/*.*"/>
+			</fileset>
+		</copy>
+	</target>
 	
-	 <target depends="package , warclean" name="build"/>
+	<target depends="copytotomcat , warclean" name="build-to-comcat"/>
+	
+	<target depends="package , warclean" name="build"/>
 </project>

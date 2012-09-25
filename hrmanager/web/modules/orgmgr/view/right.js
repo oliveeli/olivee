@@ -7,22 +7,16 @@
 define([
     'jquery',
     'underscore',
-    'backbone',
-    './left',
-    './right'
-], function($, _, Backbone, LeftView, RightView){
+    'backbone'
+], function($, _, Backbone){
     return new Backbone.View.extend({
 
-        el: $("#page"),
+        className: 'split-right',
 
         initialize: function(){
 
         },
         render: function(){
-
-            this.el.append($(new LeftView().render().el));
-            this.el.append($(new RightView().render().el));
-
             return this;
         }
     });
