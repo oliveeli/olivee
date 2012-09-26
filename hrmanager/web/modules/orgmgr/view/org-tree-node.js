@@ -5,26 +5,61 @@
  * 远方软件有限公司
  */
 
-define([
-    'jquery',
-    'underscore',
-    'backbone',
-    'text!modules-path/orgmgr/tpl/org-tree-node.html'
-], function($, _, Backbone, OrgTreeNodeTpl){
-    return new Backbone.View.extend({
+define(
+    [
+        'jquery',
+        'underscore',
+        'backbone',
+        'text!modules-path/orgmgr/tpl/org-tree-node.html',
+        'require'
+    ],
+    function($, _, Backbone, OrgTreeNodeTpl, require){
 
-        tagName: 'li',
+        var nodeView = Backbone.View.extend({
 
-        template: _.template(OrgTreeNodeTpl),
+            tagName: 'li',
 
-        initialize: function(){
+            template: _.template(OrgTreeNodeTpl),
 
-        },
+            events: {
+                'click': 'onSelected',
+                'click input': 'onSelectedCheckbox'
+            },
 
-        render: function(){
-            this.el.append(this.template(this.model.toJSON()));
-            return this;
-        }
+            initialize: function(){
+                _.bindAll(this, 'onSelected', 'onSelectedCheckbox');
+            },
 
-    });
-});
+            render: function(){
+                $(this.el).append(this.template(this.model.toJSON()));
+                return this;
+            },
+
+            onSelected: function(event){
+                if('INPUT'!==event.target.nodeName){
+                    event.preventDefault();
+                    event.stopPropagation();
+                } else {
+                    return;
+                }
+                this.$('>label').addClass('selected');
+            },
+
+            onSelectedCheckbox: function(event){
+                if(event.target.checked && !this.childLoaded){
+                    this.loadChild();
+                }
+            },
+
+            loadChild: function(){
+                var OrgTreeLayerView = require('./org-tree-layer').OrgTreeLayerView;
+                new OrgTreeLayerView({el: this.$('input+ol')}).render().el;
+                this.childLoaded = true;
+            }
+
+        });
+
+        return nodeView;
+
+    }
+);

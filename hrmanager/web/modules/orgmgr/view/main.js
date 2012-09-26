@@ -11,7 +11,7 @@ define([
     './left',
     './right'
 ], function($, _, Backbone, LeftView, RightView){
-    return new Backbone.View.extend({
+    return Backbone.View.extend({
 
         el: $("#page"),
 
@@ -19,9 +19,9 @@ define([
 
         },
         render: function(){
-
-            this.el.append($(new LeftView().render().el));
-            this.el.append($(new RightView().render().el));
+            $(this.el).html('');
+            $(this.el).append($(new LeftView().render().el));
+            $(this.el).append($(new RightView().render().el));
 
             return this;
         }

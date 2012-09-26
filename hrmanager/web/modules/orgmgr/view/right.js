@@ -7,16 +7,20 @@
 define([
     'jquery',
     'underscore',
-    'backbone'
-], function($, _, Backbone){
-    return new Backbone.View.extend({
+    'backbone',
+    'text!modules-path/orgmgr/tpl/right.html'
+], function($, _, Backbone, RightTpl){
+    return Backbone.View.extend({
 
         className: 'split-right',
+
+        template:_.template(RightTpl),
 
         initialize: function(){
 
         },
         render: function(){
+            $(this.el).append(this.template());
             return this;
         }
     });

@@ -1,25 +1,24 @@
 /**
  * Author: 李军
- * Date: 12-9-25
- * Time: 下午3:29
+ * Date: 12-9-26
+ * Time: 下午5:19
  * 远方软件有限公司
  */
 define([
     'jquery',
     'underscore',
     'backbone',
-    './org-tree'
-], function($, _, Backbone, OrgTreeView){
+    'text!tpl/nav.html'
+], function($, _, Backbone, NavigationTpl){
     return Backbone.View.extend({
 
-        className: 'split-left',
+        className: 'navbar navbar-static-top',
 
         initialize: function(){
 
         },
-
         render: function(){
-            $(this.el).append($(new OrgTreeView().render().el));
+            $(this.el).append(NavigationTpl);
             return this;
         }
     });

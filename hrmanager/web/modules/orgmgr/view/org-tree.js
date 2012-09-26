@@ -9,27 +9,23 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    './org-tree-node',
-    './../collection/organizations'
-], function($, _, Backbone, TreeNodeView, OrganizationCollection){
-    return new Backbone.View.extend({
+    './org-tree-layer',
+    './../event/org-tree-event'
+], function($, _, Backbone, OrgTreeLayerViewExport, OrgTreeEvent){
+
+    return Backbone.View.extend({
 
         tagName: 'ol',
 
         className: 'tree',
 
         initialize: function(){
-            _.bindAll(this, 'addTreeNode');
+
         },
 
         render: function(){
-            this.orgs = new OrganizationCollection();
-            this.orgs.each(this.addTreeNode);
+            new OrgTreeLayerViewExport.OrgTreeLayerView({el: this.el, className: 'tree'}).render();
             return this;
-        },
-
-        addTreeNode: function(orgModel){
-            this.el.append($(new TreeNodeView({model: orgModel}).render().el));
         }
     });
 });
