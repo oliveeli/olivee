@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2012-9-28 17:46:35 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.olivee.hrmanager.web.entity.HrEmployee" table="HR_EMPLOYEE" catalog="hrmanager">
+        <id name="id" type="string">
+            <column name="ID" length="32" />
+            <generator class="assigned" />
+        </id>
+        <property name="orgid" type="string">
+            <column name="ORGID" length="32">
+                <comment>&#168;&#166;?&#161;&#167;&#168;&#166;?&#161;&#167;ID</comment>
+            </column>
+        </property>
+        <property name="name" type="string">
+            <column name="NAME" length="128" not-null="true">
+                <comment>?&#161;&#236;&#161;&#176;???</comment>
+            </column>
+        </property>
+        <property name="gender" type="string">
+            <column name="GENDER" length="1">
+                <comment>??&#161;&#236;???</comment>
+            </column>
+        </property>
+        <property name="hometown" type="string">
+            <column name="HOMETOWN" length="64">
+                <comment>?&#161;&#192;?&#168;&#168;??</comment>
+            </column>
+        </property>
+        <property name="birthday" type="date">
+            <column name="BIRTHDAY" length="0">
+                <comment>?&#161;&#177;????</comment>
+            </column>
+        </property>
+        <property name="address" type="string">
+            <column name="ADDRESS" length="256">
+                <comment>??&#161;&#227;???</comment>
+            </column>
+        </property>
+        <property name="zipcode" type="string">
+            <column name="ZIPCODE" length="16">
+                <comment>&#168;&#166;?????</comment>
+            </column>
+        </property>
+        <property name="politicalLandscape" type="string">
+            <column name="POLITICAL_LANDSCAPE" length="32">
+                <comment>?&#161;&#177;????&#168;&#166;??&#168;&#168;??</comment>
+            </column>
+        </property>
+        <property name="degree" type="string">
+            <column name="DEGREE" length="32">
+                <comment>??????</comment>
+            </column>
+        </property>
+        <property name="educationalLevel" type="string">
+            <column name="EDUCATIONAL_LEVEL" length="32">
+                <comment>??????</comment>
+            </column>
+        </property>
+        <property name="graduateSchool" type="string">
+            <column name="GRADUATE_SCHOOL" length="128">
+                <comment>????????????</comment>
+            </column>
+        </property>
+        <property name="graduateDate" type="date">
+            <column name="GRADUATE_DATE" length="0">
+                <comment>?????????&#168;&#166;??</comment>
+            </column>
+        </property>
+        <property name="specialty" type="string">
+            <column name="SPECIALTY" length="32">
+                <comment>?&#161;&#235;??????&#161;&#176;???</comment>
+            </column>
+        </property>
+        <property name="titles" type="string">
+            <column name="TITLES" length="32">
+                <comment>&#168;&#168;???&#161;&#236;&#161;&#227;</comment>
+            </column>
+        </property>
+        <property name="telephone1" type="string">
+            <column name="TELEPHONE1" length="32">
+                <comment>&#168;&#168;?&#161;&#177;????&#161;&#177;?&#168;&#168;??1</comment>
+            </column>
+        </property>
+        <property name="telephone2" type="string">
+            <column name="TELEPHONE2" length="32">
+                <comment>&#168;&#168;?&#161;&#177;????&#161;&#177;?&#168;&#168;??2</comment>
+            </column>
+        </property>
+        <property name="telephone3" type="string">
+            <column name="TELEPHONE3" length="32">
+                <comment>&#168;&#168;?&#161;&#177;????&#161;&#177;?&#168;&#168;??3</comment>
+            </column>
+        </property>
+        <property name="email" type="string">
+            <column name="EMAIL" length="128">
+                <comment>?&#161;&#177;????&#168;&#166;???????&#161;&#227;???</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

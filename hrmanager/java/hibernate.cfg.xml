@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory name="hrmanagerMysql">
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">olivee</property>
+        <property name="hibernate.connection.url">jdbc:mysql://172.18.68.205:3306/hrmanager</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+        <property name="hibernate.search.autoregister_listeners">false</property>
+        <mapping resource="com/olivee/hrmanager/web/entity/HrEducationExperience.hbm.xml" />
+        <mapping resource="com/olivee/hrmanager/web/entity/HrAwardWinning.hbm.xml" />
+        <mapping resource="com/olivee/hrmanager/web/entity/SysCode.hbm.xml" />
+        <mapping resource="com/olivee/hrmanager/web/entity/HrWorkExperience.hbm.xml" />
+        <mapping resource="com/olivee/hrmanager/web/entity/HrFamilyMembers.hbm.xml" />
+        <mapping resource="com/olivee/hrmanager/web/entity/HrEmployee.hbm.xml" />
+        <mapping resource="com/olivee/hrmanager/web/entity/HrVocationalCertificate.hbm.xml" />
+        <mapping resource="com/olivee/hrmanager/web/entity/HrOrgnization.hbm.xml" />
+    </session-factory>
+</hibernate-configuration>

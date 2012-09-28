@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2012-9-28 17:46:35 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.olivee.hrmanager.web.entity.HrFamilyMembers" table="HR_FAMILY_MEMBERS" catalog="hrmanager">
+        <id name="id" type="string">
+            <column name="ID" length="32" />
+            <generator class="assigned" />
+        </id>
+        <property name="employeeid" type="string">
+            <column name="EMPLOYEEID" length="32" not-null="true">
+                <comment>?&#161;&#174;????ID</comment>
+            </column>
+        </property>
+        <property name="relationShip" type="string">
+            <column name="RELATION_SHIP" length="32">
+                <comment>?&#161;&#173;????</comment>
+            </column>
+        </property>
+        <property name="name" type="string">
+            <column name="NAME" length="32">
+                <comment>?&#161;&#236;&#161;&#176;???</comment>
+            </column>
+        </property>
+        <property name="birthday" type="string">
+            <column name="BIRTHDAY" length="32">
+                <comment>?&#161;&#177;????</comment>
+            </column>
+        </property>
+        <property name="company" type="string">
+            <column name="COMPANY" length="32">
+                <comment>?&#161;&#235;???&#161;&#167;?&#161;&#173;????</comment>
+            </column>
+        </property>
+        <property name="duty" type="string">
+            <column name="DUTY" length="32">
+                <comment>&#168;&#168;?????</comment>
+            </column>
+        </property>
+        <property name="telephone" type="string">
+            <column name="TELEPHONE" length="32">
+                <comment>&#168;&#168;?&#161;&#177;????&#161;&#177;?&#168;&#168;??</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>
