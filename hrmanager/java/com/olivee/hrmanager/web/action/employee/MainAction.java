@@ -1,0 +1,1 @@
+package com.olivee.hrmanager.web.action.employee;import org.springframework.stereotype.Controller;@Controller("employee.MainAction")public class MainAction {}

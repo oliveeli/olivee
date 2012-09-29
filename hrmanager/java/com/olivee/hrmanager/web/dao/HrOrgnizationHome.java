@@ -6,12 +6,12 @@ import static org.hibernate.criterion.Example.create;
 
 import java.util.List;
 
-import javax.naming.InitialContext;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.LockMode;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.olivee.hrmanager.web.entity.HrOrgnization;
 
@@ -20,22 +20,17 @@ import com.olivee.hrmanager.web.entity.HrOrgnization;
  * @see com.olivee.hrmanager.web.dao.HrOrgnization
  * @author Hibernate Tools
  */
+@Repository
 public class HrOrgnizationHome {
 
 	private static final Log log = LogFactory.getLog(HrOrgnizationHome.class);
 
-	private final SessionFactory sessionFactory = getSessionFactory();
+	private SessionFactory sessionFactory;
 
-	protected SessionFactory getSessionFactory() {
-		try {
-			return (SessionFactory) new InitialContext()
-					.lookup("SessionFactory");
-		} catch (Exception e) {
-			log.error("Could not locate SessionFactory in JNDI", e);
-			throw new IllegalStateException(
-					"Could not locate SessionFactory in JNDI");
-		}
-	}
+	 @Autowired
+	 public void setSessionFactory(SessionFactory sessionFactory) {
+	     this.sessionFactory = sessionFactory;
+	 }
 
 	public void persist(HrOrgnization transientInstance) {
 		log.debug("persisting HrOrgnization instance");
