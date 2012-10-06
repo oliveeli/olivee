@@ -18,7 +18,7 @@
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
 		destroy-method="close">
 		<property name="driverClass" value="com.mysql.jdbc.Driver" />
-		<property name="jdbcUrl" value="jdbc:mysql://172.18.68.205:3306/hrmanager" />
+		<property name="jdbcUrl" value="jdbc:mysql://hrmanager:3306/hrmanager" />
 		<property name="user" value="root" />
 		<property name="password" value="olivee" />
 	</bean>
