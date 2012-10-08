@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2012-9-28 17:46:35 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.olivee.hrmanager.web.entity.HrWorkExperience" table="HR_WORK_EXPERIENCE" catalog="hrmanager">
+        <id name="id" type="string">
+            <column name="ID" length="32" />
+            <generator class="assigned" />
+        </id>
+        <property name="employeeid" type="string">
+            <column name="EMPLOYEEID" length="32" not-null="true">
+                <comment>?&#161;&#174;????ID</comment>
+            </column>
+        </property>
+        <property name="companyName" type="string">
+            <column name="COMPANY_NAME" length="256">
+                <comment>?&#161;&#173;????????&#161;&#236;&#161;&#227;</comment>
+            </column>
+        </property>
+        <property name="companyNature" type="string">
+            <column name="COMPANY_NATURE" length="32">
+                <comment>?&#161;&#173;??????&#161;&#236;&#168;&#168;?&#161;&#167;</comment>
+            </column>
+        </property>
+        <property name="jobNature" type="string">
+            <column name="JOB_NATURE" length="32">
+                <comment>????????&#161;&#236;&#168;&#168;?&#161;&#167;</comment>
+            </column>
+        </property>
+        <property name="duty" type="string">
+            <column name="DUTY" length="128">
+                <comment>&#168;&#168;?????</comment>
+            </column>
+        </property>
+        <property name="beginDate" type="date">
+            <column name="BEGIN_DATE" length="0">
+                <comment>????&#161;&#236;????&#168;&#166;??</comment>
+            </column>
+        </property>
+        <property name="endDate" type="date">
+            <column name="END_DATE" length="0">
+                <comment>??&#161;&#176;??????&#168;&#166;??</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

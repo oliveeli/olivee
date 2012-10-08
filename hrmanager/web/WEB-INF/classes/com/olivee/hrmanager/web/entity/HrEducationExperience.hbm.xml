@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2012-9-28 17:46:35 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.olivee.hrmanager.web.entity.HrEducationExperience" table="HR_EDUCATION_EXPERIENCE" catalog="hrmanager">
+        <id name="id" type="string">
+            <column name="ID" length="32" />
+            <generator class="assigned" />
+        </id>
+        <property name="employeeid" type="string">
+            <column name="EMPLOYEEID" length="32" not-null="true">
+                <comment>????&#161;&#174;?ID</comment>
+            </column>
+        </property>
+        <property name="school" type="string">
+            <column name="SCHOOL" length="236">
+                <comment>??????</comment>
+            </column>
+        </property>
+        <property name="specialty" type="string">
+            <column name="SPECIALTY" length="128">
+                <comment>??&#161;&#176;???</comment>
+            </column>
+        </property>
+        <property name="educationalLevel" type="string">
+            <column name="EDUCATIONAL_LEVEL" length="32">
+                <comment>??????</comment>
+            </column>
+        </property>
+        <property name="beginDate" type="date">
+            <column name="BEGIN_DATE" length="0">
+                <comment>????&#161;&#236;????&#168;&#166;??</comment>
+            </column>
+        </property>
+        <property name="endDate" type="date">
+            <column name="END_DATE" length="0">
+                <comment>??&#161;&#176;??????&#168;&#166;??</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2012-9-28 17:46:35 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.olivee.hrmanager.web.entity.HrAwardWinning" table="HR_AWARD_WINNING" catalog="hrmanager">
+        <id name="id" type="string">
+            <column name="ID" length="32" />
+            <generator class="assigned" />
+        </id>
+        <property name="employeeid" type="string">
+            <column name="EMPLOYEEID" length="32" not-null="true">
+                <comment>?&#161;&#174;????ID</comment>
+            </column>
+        </property>
+        <property name="name" type="string">
+            <column name="NAME" length="256">
+                <comment>?????&#161;&#192;????&#161;&#236;&#161;&#227;</comment>
+            </column>
+        </property>
+        <property name="level" type="string">
+            <column name="LEVEL" length="32">
+                <comment>??&#161;&#236;???</comment>
+            </column>
+        </property>
+        <property name="getdate" type="date">
+            <column name="GETDATE" length="0">
+                <comment>&#168;&#168;????????&#168;&#166;??</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>
