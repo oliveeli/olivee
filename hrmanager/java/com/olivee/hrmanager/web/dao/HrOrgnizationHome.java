@@ -10,6 +10,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.LockMode;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -120,6 +121,23 @@ public class HrOrgnizationHome {
 			return results;
 		} catch (RuntimeException re) {
 			log.error("find by example failed", re);
+			throw re;
+		}
+	}
+	
+	public List<HrOrgnization> findByParentId(String parentId) {
+		log.debug("finding HrOrgnization instance by parentId");
+		try {
+			List<HrOrgnization> results = (List<HrOrgnization>) sessionFactory
+					.getCurrentSession()
+					.createCriteria(
+							"com.olivee.hrmanager.web.entity.HrOrgnization")
+					.add(Restrictions.eq("superid", parentId)  ).list();
+			log.debug("find by parentId successful, result size: "
+					+ results.size());
+			return results;
+		} catch (RuntimeException re) {
+			log.error("find by parentId failed", re);
 			throw re;
 		}
 	}

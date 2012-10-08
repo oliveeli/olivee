@@ -15,12 +15,24 @@ define([
         className: 'split-left',
 
         initialize: function(){
-
+            _.extend(this, Backbone.Events);
+            _.bindAll(this, 'selectOrg', 'selectRoot');
         },
 
         render: function(){
-            $(this.el).append($(new OrgTreeView().render().el));
+            var treeView = new OrgTreeView().render();
+            $(this.el).append($(treeView.el));
+            treeView.on('selectedNode', this.selectOrg);
+            treeView.on('selectedRoot', this.selectRoot);
             return this;
+        },
+
+        selectOrg: function(orgModel){
+            this.trigger('selectOrg', orgModel);
+        },
+
+        selectRoot: function(){
+            this.trigger('selectRoot');
         }
     });
 });

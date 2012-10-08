@@ -15,10 +15,8 @@ define(
 
             model: OrganizationModel,
 
-            initialize: function(){
-                for(var i=0;i<10;i++){
-                    this.add(new OrganizationModel({name: 'test'+ i, id: ''+ i}))
-                }
+            initialize: function(options){
+                this.url = 'organization/list?parentId=' + options.parentId;
             }
 
 

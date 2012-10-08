@@ -16,14 +16,35 @@ define([
         el: $("#page"),
 
         initialize: function(){
-
+            _.extend(this, Backbone.Events);
+            _.bindAll(this, 'selectOrg', 'selectRoot');
         },
+
         render: function(){
             $(this.el).html('');
-            $(this.el).append($(new LeftView().render().el));
-            $(this.el).append($(new RightView().render().el));
+            var leftView = new LeftView().render();
+            $(this.el).append($(leftView.el));
+            leftView.on('selectOrg', this.selectOrg);
+            leftView.on('selectRoot', this.selectRoot);
 
             return this;
+        },
+
+        selectOrg: function(orgModel){
+            if(this.rightView){
+                this.rightView.remove();
+            }
+            this.rightView = new RightView({model: orgModel}).render();
+            $(this.el).append($(this.rightView.el));
+        },
+
+        selectRoot: function(){
+            if(this.rightView){
+                this.rightView.remove();
+            }
+            this.rightView = new RightView({isRoot: true}).render();
+            $(this.el).append($(this.rightView.el));
         }
+
     });
 });

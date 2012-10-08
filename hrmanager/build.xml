@@ -34,7 +34,9 @@
     </path>
 	
     <path id="Web App Libraries.libraryclasspath">
-        <pathelement location="web/WEB-INF/lib/webctrol.jar"/>
+		<fileset dir="web/WEB-INF/lib">
+			<include name="**/*.jar" />
+		</fileset>
     </path>
     <path id="EAR Libraries.libraryclasspath"/>
 	

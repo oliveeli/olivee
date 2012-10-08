@@ -27,7 +27,8 @@ define(
             },
 
             initialize: function(){
-                _.bindAll(this, 'onSelected', 'onSelectedCheckbox');
+                _.extend(this, Backbone.Events);
+                _.bindAll(this, 'onSelected', 'onSelectedCheckbox', 'selectedSubNode');
             },
 
             render: function(){
@@ -43,6 +44,7 @@ define(
                     return;
                 }
                 this.$('>label').addClass('selected');
+                this.trigger('selected', this);
             },
 
             onSelectedCheckbox: function(event){
@@ -53,8 +55,13 @@ define(
 
             loadChild: function(){
                 var OrgTreeLayerView = require('./org-tree-layer').OrgTreeLayerView;
-                new OrgTreeLayerView({el: this.$('input+ol')}).render().el;
+                var layer = new OrgTreeLayerView({parentId: this.model.id, el: this.$('input+ol')}).render();
+                layer.bind('selectedNode', this.selectedSubNode);
                 this.childLoaded = true;
+            },
+
+            selectedSubNode: function(orgModel){
+                this.trigger('selectedNode', orgModel);
             }
 
         });

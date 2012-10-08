@@ -6,7 +6,7 @@
     <class name="com.olivee.hrmanager.web.entity.HrEmployee" table="HR_EMPLOYEE" catalog="hrmanager">
         <id name="id" type="string">
             <column name="ID" length="32" />
-            <generator class="assigned" />
+            <generator class="uuid.hex" />
         </id>
         <property name="orgid" type="string">
             <column name="ORGID" length="32">

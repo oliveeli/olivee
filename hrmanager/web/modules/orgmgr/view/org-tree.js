@@ -9,9 +9,11 @@ define([
     'jquery',
     'underscore',
     'backbone',
+    './../model/organization',
+    './org-tree-node',
     './org-tree-layer',
     './../event/org-tree-event'
-], function($, _, Backbone, OrgTreeLayerViewExport, OrgTreeEvent){
+], function($, _, Backbone, OrgTreeNodeModel, OrgTreeNodeView, OrgTreeLayerViewExport, OrgTreeEvent){
 
     return Backbone.View.extend({
 
@@ -20,12 +22,29 @@ define([
         className: 'tree',
 
         initialize: function(){
-
+            _.extend(this, Backbone.Events);
+            _.bindAll(this, 'selectedNode', 'selectedRoot');
         },
 
         render: function(){
-            new OrgTreeLayerViewExport.OrgTreeLayerView({el: this.el, className: 'tree'}).render();
+            var root = new OrgTreeNodeView({
+                model: new OrgTreeNodeModel({name: 'Organization Tree', id: '', isRoot: true})
+            }).render();
+
+        	$(this.el).append($(root.el));
+
+            root.on('selected', this.selectedRoot);
+            root.on('selectedNode', this.selectedNode);
             return this;
+        },
+
+        selectedNode: function(orgModel){
+            this.trigger('selectedNode', orgModel);
+        },
+
+        selectedRoot: function(nodeView){
+            this.trigger('selectedRoot', nodeView.model);
         }
+
     });
 });

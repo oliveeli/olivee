@@ -24,17 +24,29 @@ define(
             template: _.template(OrgTreeLayerTpl),
 
             initialize: function(){
-                _.bindAll(this, 'addTreeNode');
+                _.extend(this, Backbone.Events);
+                _.bindAll(this, 'addAll', 'addTreeNode', 'selectedNode');
             },
 
             render: function(){
-                this.orgs = new OrganizationCollection();
-                this.orgs.each(this.addTreeNode);
+                this.orgs = new OrganizationCollection({parentId: this.options.parentId});
+                this.orgs.bind('reset',   this.addAll);
+                this.orgs.fetch();
                 return this;
             },
 
+            addAll: function(){
+                this.orgs.each(this.addTreeNode);
+            },
+
             addTreeNode: function(orgModel){
-                $(this.el).append($(new OrgTreeNodeView({model: orgModel}).render().el));
+                var node = new OrgTreeNodeView({model: orgModel}).render();
+                node.bind('selected', this.selectedNode);
+                $(this.el).append($(node.el));
+            },
+
+            selectedNode: function(nodeView){
+                this.trigger('selectedNode', nodeView.model);
             }
         });
 
