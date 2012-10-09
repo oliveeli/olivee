@@ -20,46 +20,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="org-detail-form.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/orgmgr/tpl/org-detail-form.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="6" selection-start="632" selection-end="632" vertical-scroll-proportion="-10.625">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="org-tree.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/orgmgr/view/org-tree.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="0" selection-start="574" selection-end="574" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="organization.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/orgmgr/model/organization.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="5" selection-start="699" selection-end="699" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="org-detail-form.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/orgmgr/view/org-detail-form.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="40" selection-start="434" selection-end="434" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="nav.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/scripts/tpl/nav.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="57" column="154" selection-start="1622" selection-end="1622" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -74,28 +38,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="backbone.syphon.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/lib/backbone/backbone.syphon.js">
+      <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/modules/orgmgr/view/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="45" column="60" selection-start="1167" selection-end="1167" vertical-scroll-proportion="0.9704251">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/main.js">
+      <file leaf-file-name="org-tree.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modules/orgmgr/view/org-tree.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="36" selection-start="534" selection-end="548" vertical-scroll-proportion="0.0">
+            <state line="55" column="49" selection-start="1548" selection-end="1548" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="organizations.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/orgmgr/collection/organizations.js">
+      <file leaf-file-name="left.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modules/orgmgr/view/left.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="45" selection-start="380" selection-end="397" vertical-scroll-proportion="0.0">
+            <state line="19" column="10" selection-start="395" selection-end="395" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="confirm.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modules/orgmgr/tpl/confirm.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="10" selection-start="416" selection-end="416" vertical-scroll-proportion="-6.875">
               <folding />
             </state>
           </provider>
@@ -104,8 +77,37 @@
       <file leaf-file-name="right.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/orgmgr/tpl/right.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="54" selection-start="124" selection-end="124" vertical-scroll-proportion="-1.25">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="org-detail-form.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modules/orgmgr/tpl/org-detail-form.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="112" selection-start="475" selection-end="475" vertical-scroll-proportion="-5.625">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="right.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modules/orgmgr/view/right.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="0" selection-start="155" selection-end="179" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="confirm.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modules/orgmgr/view/confirm.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="40" column="26" selection-start="936" selection-end="936" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#0#66#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -120,21 +122,21 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/modules/orgmgr/view/org-tree-layer.js" />
-        <option value="$PROJECT_DIR$/modules/orgmgr/view/org-tree-node.js" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/modules/orgmgr/view/left.js" />
-        <option value="$PROJECT_DIR$/modules/orgmgr/view/right.js" />
-        <option value="$PROJECT_DIR$/modules/orgmgr/view/org-tree.js" />
-        <option value="$PROJECT_DIR$/scripts/tpl/nav.html" />
-        <option value="$PROJECT_DIR$/modules/orgmgr/view/main.js" />
-        <option value="$PROJECT_DIR$/css/tree/_styles.css" />
-        <option value="$PROJECT_DIR$/css/base.css" />
         <option value="$PROJECT_DIR$/modules/orgmgr/tpl/right.html" />
-        <option value="$PROJECT_DIR$/modules/orgmgr/model/organization.js" />
         <option value="$PROJECT_DIR$/modules/orgmgr/collection/organizations.js" />
         <option value="$PROJECT_DIR$/scripts/main.js" />
         <option value="$PROJECT_DIR$/modules/orgmgr/tpl/org-detail-form.html" />
+        <option value="$PROJECT_DIR$/modules/orgmgr/model/organization.js" />
+        <option value="$PROJECT_DIR$/modules/orgmgr/view/org-tree.js" />
+        <option value="$PROJECT_DIR$/modules/orgmgr/view/left.js" />
+        <option value="$PROJECT_DIR$/modules/orgmgr/view/main.js" />
+        <option value="$PROJECT_DIR$/modules/orgmgr/view/org-tree-node.js" />
+        <option value="$PROJECT_DIR$/modules/orgmgr/view/org-tree-layer.js" />
+        <option value="$PROJECT_DIR$/modules/orgmgr/view/right.js" />
+        <option value="$PROJECT_DIR$/modules/orgmgr/tpl/alert.html" />
+        <option value="$PROJECT_DIR$/modules/orgmgr/view/alert.js" />
+        <option value="$PROJECT_DIR$/modules/orgmgr/tpl/confirm.html" />
+        <option value="$PROJECT_DIR$/modules/orgmgr/view/confirm.js" />
         <option value="$PROJECT_DIR$/modules/orgmgr/view/org-detail-form.js" />
       </list>
     </option>
@@ -170,6 +172,16 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="All">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -361,50 +373,6 @@
               <option name="myItemId" value="orgmgr" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="event" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="orgmgr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="orgmgr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="collection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -440,16 +408,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="All">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -459,8 +417,8 @@
     <property name="last_opened_file_path" value="$USER_HOME$/java/mec8.work.desktopwebtest/desktop/web/v6desktop" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -533,6 +491,7 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289941" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1829204" sideWeight="0.67218935" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -543,7 +502,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -605,34 +563,20 @@
           <properties />
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="6555" />
+      <option name="time" value="7866" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/modules/orgmgr/view/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="52" selection-start="391" selection-end="391" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/tree/_styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="15" selection-start="344" selection-end="344" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/main.css">
+    <entry file="file://$PROJECT_DIR$/scripts/tpl/nav.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/base.css">
+    <entry file="file://$PROJECT_DIR$/modules/orgmgr/model/organization.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="19" selection-start="759" selection-end="759" vertical-scroll-proportion="0.0">
+        <state line="27" column="60" selection-start="752" selection-end="752" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -651,51 +595,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/modules/orgmgr/view/org-tree-node.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="63" selection-start="889" selection-end="889" vertical-scroll-proportion="-1.3636364">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/orgmgr/view/org-tree-layer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="24" selection-start="1302" selection-end="1302" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/orgmgr/view/left.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="10" selection-start="395" selection-end="395" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/modules/orgmgr/tpl/right.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="54" selection-start="124" selection-end="124" vertical-scroll-proportion="-1.25">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/orgmgr/collection/organizations.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="45" selection-start="380" selection-end="397" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/orgmgr/model/organization.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="5" selection-start="699" selection-end="699" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/lib/backbone/backbone.syphon.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/main.js">
+    <entry file="file://$PROJECT_DIR$/modules/orgmgr/tpl/org-detail-form.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="36" selection-start="534" selection-end="548" vertical-scroll-proportion="0.0">
+        <state line="9" column="112" selection-start="475" selection-end="475" vertical-scroll-proportion="-5.625">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/orgmgr/view/org-tree.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="574" selection-end="574" vertical-scroll-proportion="0.0">
+        <state line="55" column="49" selection-start="1548" selection-end="1548" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/orgmgr/tpl/org-detail-form.html">
+    <entry file="file://$PROJECT_DIR$/modules/orgmgr/tpl/confirm.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="6" selection-start="632" selection-end="632" vertical-scroll-proportion="-10.625">
+        <state line="11" column="10" selection-start="416" selection-end="416" vertical-scroll-proportion="-6.875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/orgmgr/view/confirm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="26" selection-start="936" selection-end="936" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#66#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/orgmgr/view/right.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="155" selection-end="179" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/orgmgr/view/org-detail-form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="154" selection-start="1622" selection-end="1622" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -707,16 +674,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/orgmgr/view/org-detail-form.js">
+    <entry file="file://$PROJECT_DIR$/modules/orgmgr/view/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="40" selection-start="434" selection-end="434" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/tpl/nav.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="45" column="60" selection-start="1167" selection-end="1167" vertical-scroll-proportion="0.9704251">
           <folding />
         </state>
       </provider>

@@ -27,12 +27,12 @@ define([
             return this;
         },
 
-        selectOrg: function(orgModel){
-            this.trigger('selectOrg', orgModel);
+        selectOrg: function(nodeView){
+            this.trigger('selectOrg', nodeView.model);
         },
 
-        selectRoot: function(){
-            this.trigger('selectRoot');
+        selectRoot: function(nodeView){
+            this.trigger('selectRoot', nodeView.model);
         }
     });
 });

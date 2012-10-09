@@ -11,6 +11,7 @@ define([
     './left',
     './right'
 ], function($, _, Backbone, LeftView, RightView){
+
     return Backbone.View.extend({
 
         el: $("#page"),
@@ -38,11 +39,11 @@ define([
             $(this.el).append($(this.rightView.el));
         },
 
-        selectRoot: function(){
+        selectRoot: function(rootModel){
             if(this.rightView){
                 this.rightView.remove();
             }
-            this.rightView = new RightView({isRoot: true}).render();
+            this.rightView = new RightView({model: rootModel}).render();
             $(this.el).append($(this.rightView.el));
         }
 

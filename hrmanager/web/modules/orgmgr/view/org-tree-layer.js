@@ -26,11 +26,13 @@ define(
             initialize: function(){
                 _.extend(this, Backbone.Events);
                 _.bindAll(this, 'addAll', 'addTreeNode', 'selectedNode');
+                this.options.parentModel.on('addChildSuccess', this.addTreeNode)
             },
 
             render: function(){
-                this.orgs = new OrganizationCollection({parentId: this.options.parentId});
+                this.orgs = new OrganizationCollection({parentId: this.options.parentModel.id});
                 this.orgs.bind('reset',   this.addAll);
+                this.orgs.bind('add',   this.addTreeNode);
                 this.orgs.fetch();
                 return this;
             },
@@ -40,13 +42,19 @@ define(
             },
 
             addTreeNode: function(orgModel){
+                var that = this;
+                orgModel.on('del:success', function(){
+                    that.orgs.remove(orgModel);
+                });
+
                 var node = new OrgTreeNodeView({model: orgModel}).render();
                 node.bind('selected', this.selectedNode);
+                node.bind('selectedNode', this.selectedNode);
                 $(this.el).append($(node.el));
             },
 
             selectedNode: function(nodeView){
-                this.trigger('selectedNode', nodeView.model);
+                this.trigger('selectedNode', nodeView);
             }
         });
 

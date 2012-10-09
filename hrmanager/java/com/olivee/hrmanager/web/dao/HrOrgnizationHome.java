@@ -65,10 +65,26 @@ public class HrOrgnizationHome {
 			throw re;
 		}
 	}
+	
+	public void deleteDependence(HrOrgnization persistentInstance) {
+		log.debug("deleting dependence HrOrgnization instance");
+		try {
+			List<HrOrgnization> childs = this.findByParentId(persistentInstance.getId());
+			for(HrOrgnization ho:childs){
+				this.delete(ho);
+			}
+			sessionFactory.getCurrentSession().delete(persistentInstance);
+			log.debug("delete dependence successful");
+		} catch (RuntimeException re) {
+			log.error("delete dependence failed", re);
+			throw re;
+		}
+	}
 
 	public void delete(HrOrgnization persistentInstance) {
 		log.debug("deleting HrOrgnization instance");
 		try {
+			this.deleteDependence(persistentInstance);
 			sessionFactory.getCurrentSession().delete(persistentInstance);
 			log.debug("delete successful");
 		} catch (RuntimeException re) {

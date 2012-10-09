@@ -38,12 +38,22 @@ define([
             return this;
         },
 
-        selectedNode: function(orgModel){
-            this.trigger('selectedNode', orgModel);
+        selectedNode: function(nodeView){
+            if(this.selectedView){
+                this.selectedView.removeSelectedClass();
+            }
+            this.selectedView = nodeView;
+            this.selectedView.addSelectedClass();
+            this.trigger('selectedNode', nodeView);
         },
 
         selectedRoot: function(nodeView){
-            this.trigger('selectedRoot', nodeView.model);
+            if(this.selectedView){
+                this.selectedView.removeSelectedClass();
+            }
+            this.selectedView = nodeView;
+            this.selectedView.addSelectedClass();
+            this.trigger('selectedRoot', nodeView);
         }
 
     });

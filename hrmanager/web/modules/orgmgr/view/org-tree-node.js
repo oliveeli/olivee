@@ -28,12 +28,24 @@ define(
 
             initialize: function(){
                 _.extend(this, Backbone.Events);
-                _.bindAll(this, 'onSelected', 'onSelectedCheckbox', 'selectedSubNode');
+                _.bindAll(this, 'onSelected', 'onSelectedCheckbox', 'selectedSubNode', 'updateDisplay', 'destroyView', 'onCreateOrg');
+                this.model.on('update:success', this.updateDisplay);
+                this.model.on('del:success', this.destroyView);
+                this.model.on('createOrg', this.onCreateOrg);
+
             },
 
             render: function(){
                 $(this.el).append(this.template(this.model.toJSON()));
                 return this;
+            },
+
+            updateDisplay: function(){
+                this.$('>label').html(this.model.get('name'));
+            },
+
+            destroyView: function(){
+                this.remove();
             },
 
             onSelected: function(event){
@@ -43,25 +55,37 @@ define(
                 } else {
                     return;
                 }
-                this.$('>label').addClass('selected');
                 this.trigger('selected', this);
             },
 
             onSelectedCheckbox: function(event){
-                if(event.target.checked && !this.childLoaded){
+                if((!event || event.target.checked) && !this.childLoaded){
                     this.loadChild();
                 }
             },
 
             loadChild: function(){
                 var OrgTreeLayerView = require('./org-tree-layer').OrgTreeLayerView;
-                var layer = new OrgTreeLayerView({parentId: this.model.id, el: this.$('input+ol')}).render();
+                var layer = new OrgTreeLayerView({parentModel: this.model, el: this.$('input+ol')}).render();
                 layer.bind('selectedNode', this.selectedSubNode);
                 this.childLoaded = true;
             },
 
-            selectedSubNode: function(orgModel){
-                this.trigger('selectedNode', orgModel);
+            onCreateOrg: function(){
+                this.$('>input').attr('checked',true);
+                this.onSelectedCheckbox();
+            },
+
+            selectedSubNode: function(nodeView){
+                this.trigger('selectedNode', nodeView);
+            },
+
+            removeSelectedClass: function(){
+                this.$('>label').removeClass('selected');
+            },
+
+            addSelectedClass: function(){
+                this.$('>label').addClass('selected');
             }
 
         });
