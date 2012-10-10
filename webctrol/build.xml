@@ -13,7 +13,7 @@
 	<property name="dist.dir" value="dist"></property>
 	<property name="jar.name" value="${ant.project.name}.jar"/>
 	
-    <path id="libraryclasspath">
+    <path id="tomcat.libraryclasspath">
         <pathelement location="../../../java/apache-tomcat-6.0.33/lib/annotations-api.jar"/>
         <pathelement location="../../../java/apache-tomcat-6.0.33/lib/catalina-ant.jar"/>
         <pathelement location="../../../java/apache-tomcat-6.0.33/lib/catalina-ha.jar"/>
@@ -32,9 +32,17 @@
         <pathelement location="../../../java/apache-tomcat-6.0.33/lib/tomcat-i18n-ja.jar"/>
     </path>
 	
+	
+    <path id="libpath">
+		<fileset dir="lib">
+			<include name="**/*.jar" />
+		</fileset>
+    </path>
+	
     <path id="webctrol.classpath">
         <pathelement location="${classes.dir}"/>
-        <path refid="libraryclasspath"/>
+        <path refid="tomcat.libraryclasspath"/>
+    	<path refid="libpath"/>
     </path>
 	
     <target name="cleanclass">
