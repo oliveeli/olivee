@@ -26,12 +26,8 @@ public class HrOrgnizationHome {
 
 	private static final Log log = LogFactory.getLog(HrOrgnizationHome.class);
 
+	@Autowired
 	private SessionFactory sessionFactory;
-
-	 @Autowired
-	 public void setSessionFactory(SessionFactory sessionFactory) {
-	     this.sessionFactory = sessionFactory;
-	 }
 
 	public void persist(HrOrgnization transientInstance) {
 		log.debug("persisting HrOrgnization instance");

@@ -2,7 +2,7 @@
  * Author: 李军
  * Date: 12-9-26
  * Time: 下午5:19
- * 远方软件有限公司
+ *
  */
 define([
     'jquery',

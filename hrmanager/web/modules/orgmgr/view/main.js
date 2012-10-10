@@ -2,15 +2,16 @@
  * Author: 李军
  * Date: 12-9-25
  * Time: 下午3:29
- * 远方软件有限公司
+ *
  */
 define([
     'jquery',
     'underscore',
     'backbone',
+    'two-column-view',
     './left',
     './right'
-], function($, _, Backbone, LeftView, RightView){
+], function($, _, Backbone, TwoColumnView, LeftView, RightView){
 
     return Backbone.View.extend({
 
@@ -22,9 +23,12 @@ define([
         },
 
         render: function(){
-            $(this.el).html('');
+            this.twoColumnView = new TwoColumnView().render();
+            $(this.el).html($(this.twoColumnView.el));
+
             var leftView = new LeftView().render();
-            $(this.el).append($(leftView.el));
+            this.twoColumnView.setLeftView(leftView);
+
             leftView.on('selectOrg', this.selectOrg);
             leftView.on('selectRoot', this.selectRoot);
 
@@ -36,7 +40,7 @@ define([
                 this.rightView.remove();
             }
             this.rightView = new RightView({model: orgModel}).render();
-            $(this.el).append($(this.rightView.el));
+            this.twoColumnView.setRightView(this.rightView);
         },
 
         selectRoot: function(rootModel){
@@ -44,7 +48,7 @@ define([
                 this.rightView.remove();
             }
             this.rightView = new RightView({model: rootModel}).render();
-            $(this.el).append($(this.rightView.el));
+            this.twoColumnView.setRightView(this.rightView);
         }
 
     });

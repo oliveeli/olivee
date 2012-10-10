@@ -2,14 +2,14 @@
  * Author: 李军
  * Date: 12-10-8
  * Time: 上午10:51
- * 远方软件有限公司
+ *
  */
 define([
     'jquery',
     'underscore',
     'backbone',
     'backbone.syphon',
-    './confirm',
+    'confirm-view',
     'text!modules-path/orgmgr/tpl/org-detail-form.html'
 ], function($, _, Backbone, BackboneSyphon, ConfirmView, OrgDetailFormFormTpl){
 

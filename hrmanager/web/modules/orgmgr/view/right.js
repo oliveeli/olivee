@@ -2,7 +2,7 @@
  * Author: 李军
  * Date: 12-9-25
  * Time: 下午3:29
- * 远方软件有限公司
+ *
  */
 define([
     'jquery',
@@ -14,8 +14,6 @@ define([
 ], function($, _, Backbone, OrganizationModel, OrgDetailFormView, RightTpl){
 
     return Backbone.View.extend({
-
-        className: 'split-right',
 
         template:_.template(RightTpl),
 

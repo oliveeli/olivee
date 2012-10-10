@@ -2,7 +2,7 @@
  * Author: 李军
  * Date: 12-9-25
  * Time: 下午3:47
- * 远方软件有限公司
+ *
  */
 
 define([
@@ -11,9 +11,8 @@ define([
     'backbone',
     './../model/organization',
     './org-tree-node',
-    './org-tree-layer',
-    './../event/org-tree-event'
-], function($, _, Backbone, OrgTreeNodeModel, OrgTreeNodeView, OrgTreeLayerViewExport, OrgTreeEvent){
+    './org-tree-layer'
+], function($, _, Backbone, OrgTreeNodeModel, OrgTreeNodeView, OrgTreeLayerViewExport){
 
     return Backbone.View.extend({
 
