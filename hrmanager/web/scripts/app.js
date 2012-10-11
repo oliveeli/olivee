@@ -12,8 +12,7 @@ define(
         "router",
         './view/nav',
         './../modules/usermgr/view/main',
-        './../modules/orgmgr/view/main',
-        'bootstrap'
+        './../modules/orgmgr/view/main'
     ],
     function($, _, Backbone, Router, NavigationView, UserManagerView, OrgManagerView) {
 

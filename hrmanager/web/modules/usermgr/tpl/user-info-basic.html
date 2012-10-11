@@ -1,0 +1,110 @@
+<div class="control-group">
+    <label class="control-label" for="name">
+        <div class="user-image pull-right">
+            <img id="user-image" src="" />
+            <div class="footer"><a href="#">上传照片</a></div>
+        </div>
+    </label>
+    <div class="controls">
+        <h3><%=orgModel.name%></h3>
+        <div class="line"><input class="span4" type="text" id="name" name="name" placeholder="Name" value="<%=model.name?model.name:''%>" ></div>
+        <div class="line"><input class="span4" type="text" id="gender" name="gender" placeholder="Gender" value="<%=model.gender?model.gender:''%>" ></div>
+        <div class="line input-append date" id="dp-birthday" data-date-format="yyyy-mm-dd">
+            <input class="span4" type="text" id="birthday" name="birthday" placeholder="Birthday" value="<%=model.birthday?model.birthday:''%>" >
+            <span class="add-on"><i class="icon-th"></i></span>
+        </div>
+    </div>
+</div>
+<div class="control-group">
+    <label class="control-label" for="hometown">hometown</label>
+    <div class="controls">
+        <input class="span4" type="text" id="hometown" name="hometown" placeholder="hometown" value="<%=model.hometown?model.hometown:''%>">
+    </div>
+</div>
+<div class="control-group">
+    <label class="control-label" for="address">address</label>
+    <div class="controls">
+        <input class="span4" type="text" id="address" name="address" placeholder="address" value="<%=model.address?model.address:''%>">
+    </div>
+</div>
+<div class="control-group">
+    <label class="control-label" for="zipcode">zipcode</label>
+    <div class="controls">
+        <input class="span4" type="text" id="zipcode" name="zipcode" placeholder="zipcode" value="<%=model.zipcode?model.zipcode:''%>">
+    </div>
+</div>
+<div class="control-group">
+    <label class="control-label" for="politicalLandscape">politicalLandscape</label>
+    <div class="controls">
+        <input class="span4" type="text" id="politicalLandscape" name="politicalLandscape" placeholder="politicalLandscape" value="<%=model.politicalLandscape?model.politicalLandscape:''%>">
+    </div>
+</div>
+<div class="control-group">
+    <label class="control-label" for="degree">degree</label>
+    <div class="controls">
+        <input class="span4" type="text" id="degree" name="degree" placeholder="degree" value="<%=model.degree?model.degree:''%>">
+    </div>
+</div>
+<div class="control-group">
+    <label class="control-label" for="educationalLevel">educationalLevel</label>
+    <div class="controls">
+        <input class="span4" type="text" id="educationalLevel" name="educationalLevel" placeholder="educationalLevel" value="<%=model.educationalLevel?model.educationalLevel:''%>">
+    </div>
+</div>
+<div class="control-group">
+    <label class="control-label" for="graduateSchool">graduateSchool</label>
+    <div class="controls">
+        <input class="span4" type="text" id="graduateSchool" name="graduateSchool" placeholder="graduateSchool" value="<%=model.graduateSchool?model.graduateSchool:''%>">
+    </div>
+</div>
+<div class="control-group">
+    <label class="control-label" for="graduateDate">graduateDate</label>
+    <div class="controls">
+        <div class="line input-append date" id="dp-graduateDate" data-date-format="yyyy-mm-dd">
+            <input class="span4" type="text" id="graduateDate" name="graduateDate" placeholder="graduateDate" value="<%=model.graduateDate?model.graduateDate:''%>" >
+            <span class="add-on"><i class="icon-th"></i></span>
+        </div>
+    </div>
+</div>
+<div class="control-group">
+    <label class="control-label" for="specialty">specialty</label>
+    <div class="controls">
+        <input class="span4" type="text" id="specialty" name="specialty" placeholder="specialty" value="<%=model.specialty?model.specialty:''%>">
+    </div>
+</div>
+<div class="control-group">
+    <label class="control-label" for="titles">titles</label>
+    <div class="controls">
+        <input class="span4" type="text" id="titles" name="titles" placeholder="titles" value="<%=model.titles?model.titles:''%>">
+    </div>
+</div>
+<div class="control-group">
+    <label class="control-label" for="telephone1">telephone1</label>
+    <div class="controls">
+        <input class="span4" type="text" id="telephone1" name="telephone1" placeholder="telephone1" value="<%=model.telephone1?model.telephone1:''%>">
+    </div>
+</div>
+<div class="control-group">
+    <label class="control-label" for="telephone2">telephone2</label>
+    <div class="controls">
+        <input class="span4" type="text" id="telephone2" name="telephone2" placeholder="telephone2" value="<%=model.telephone2?model.telephone2:''%>">
+    </div>
+</div>
+<div class="control-group">
+    <label class="control-label" for="telephone3">telephone3</label>
+    <div class="controls">
+        <input class="span4" type="text" id="telephone3" name="telephone3" placeholder="telephone3" value="<%=model.telephone3?model.telephone3:''%>">
+    </div>
+</div>
+<div class="control-group">
+    <label class="control-label" for="email">email</label>
+    <div class="controls">
+        <input class="span4" type="text" id="email" name="email" placeholder="email" value="<%=model.email?model.email:''%>">
+    </div>
+</div>
+<div class="control-group">
+    <div class="controls">
+        <button type="submit" class="btn" id="save">Save</button>
+        <button type="submit" class="btn" id="delete">Delete</button>
+    </div>
+</div>

@@ -12,6 +12,7 @@ require.config({
         'backbone' : 'lib/backbone/backbone',
         'backbone.syphon' : 'lib/backbone/backbone.syphon',
         'bootstrap' : 'lib/bootstrap/js/bootstrap',
+        'bootstrap-datepicker' : 'lib/bootstrap/js/bootstrap-datepicker',
         'underscore' : 'lib/underscore/underscore',
         'two-column-view' : 'framework/two-column/view/main',
         'confirm-view' : 'framework/confirm/view/main',
@@ -19,6 +20,12 @@ require.config({
     },
 
     shim: {
+        'bootstrap': {
+            deps: ['jquery']
+        },
+        'bootstrap-datepicker': {
+            deps: ['bootstrap', 'jquery']
+        },
         backbone: {
             deps: ['underscore', 'jquery'],
             exports: 'Backbone'
@@ -36,7 +43,11 @@ require.config({
     }
 });
 
-require([ 'jquery', 'app'], function($, App) {
+require([ 'jquery',
+    'app',
+    'bootstrap',
+    'bootstrap-datepicker'
+], function($, App) {
     $(function(){
         App.initialize();
     });

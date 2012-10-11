@@ -18,7 +18,9 @@ define([
         template:_.template(UserListItemTpl),
 
         events: {
-            'click':'click'
+            'click':'click',
+            'click #edit': 'edit',
+            'click #delete': 'delete'
         },
 
         initialize: function(){
@@ -31,8 +33,26 @@ define([
         },
 
         click: function(){
-            this.trigger('selected', this.model);
+            this.trigger('selected', this);
+        },
+
+        addSelectClass: function(){
+            $(this.el).addClass('selected');
+        },
+
+        removeSelectClass: function(){
+            $(this.el).removeClass('selected');
+        },
+
+        edit: function(event){
+            event.stopPropagation();
+            this.trigger('edit', this.model);
+        },
+
+        delete: function(event){
+            event.stopPropagation();
         }
+
 
     });
 

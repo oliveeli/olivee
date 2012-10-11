@@ -42,11 +42,21 @@ define([
         addOne: function(model){
             var itemView = new UserListItemView({index: '1', model: model}).render();
             itemView.on('selected', this.selectOne, this);
+            itemView.on('edit', this.edit, this);
             this.$('tbody').append($(itemView.el));
         },
 
-        selectOne: function(userModel){
-            this.trigger('selectedUser', userModel);
+        selectOne: function(itemView){
+            if(this.itemView){
+                this.itemView.removeSelectClass();
+            }
+            this.itemView = itemView;
+            this.itemView.addSelectClass();
+            this.trigger('selectedUser', itemView.model);
+        },
+
+        edit: function(model){
+            this.trigger('edit', model);
         }
 
     });

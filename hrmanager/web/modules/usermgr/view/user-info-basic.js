@@ -10,7 +10,7 @@ define([
     'backbone',
     'backbone.syphon',
     'confirm-view',
-    'text!modules-path/usermgr/tpl/user-detail-form.html'
+    'text!modules-path/usermgr/tpl/user-info-basic.html'
 ], function($, _, Backbone, BackboneSyphon, ConfirmView, UserDetailFormFormTpl){
 
     return Backbone.View.extend({
@@ -39,6 +39,11 @@ define([
                 model:this.model.toJSON(),
                 orgModel: this.options.orgModel.toJSON()
             }));
+            this.$('#dp-birthday').attr('data-date','2012-12-02');
+            this.$('#dp-graduateDate').attr('data-date','2012-12-03');
+            this.$('#dp-birthday').datepicker();
+            this.$('#dp-graduateDate').datepicker();
+
             return this;
         },
 
