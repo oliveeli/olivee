@@ -40,7 +40,7 @@ define([
         },
 
         addOne: function(model){
-            var itemView = new UserListItemView({model: model});
+            var itemView = new UserListItemView({index: '1', model: model}).render();
             itemView.on('selected', this.selectOne, this);
             this.$('tbody').append($(itemView.el));
         },
