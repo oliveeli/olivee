@@ -9,6 +9,7 @@ require.config({
     paths : {
         'text': 'lib/require/text',
         'jquery' : 'lib/jquery/jquery-1.8.1',
+        'jquery.jcrop' : 'lib/jquery/jcrop/js/jquery.Jcrop',
         'backbone' : 'lib/backbone/backbone',
         'backbone.syphon' : 'lib/backbone/backbone.syphon',
         'bootstrap' : 'lib/bootstrap/js/bootstrap',

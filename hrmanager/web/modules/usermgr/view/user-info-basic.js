@@ -10,8 +10,9 @@ define([
     'backbone',
     'backbone.syphon',
     'confirm-view',
+    './upload-pic',
     'text!modules-path/usermgr/tpl/user-info-basic.html'
-], function($, _, Backbone, BackboneSyphon, ConfirmView, UserDetailFormFormTpl){
+], function($, _, Backbone, BackboneSyphon, ConfirmView, UploadPicView, UserDetailFormFormTpl){
 
     return Backbone.View.extend({
 
@@ -25,7 +26,8 @@ define([
 
         events: {
             'click #save':'save',
-            'click #delete': 'confirmDelete'
+            'click #delete': 'confirmDelete',
+            'click #uploadAvatar':'uploadAvatar'
         },
 
         template: _.template(UserDetailFormFormTpl),
@@ -78,6 +80,10 @@ define([
                     model.trigger("del:fail", model);
                 }
             });
+        },
+
+        uploadAvatar: function(){
+            $(this.el).append(new UploadPicView().render());
         }
 
     });
