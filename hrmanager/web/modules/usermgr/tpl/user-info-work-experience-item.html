@@ -1,0 +1,50 @@
+<form class="form-horizontal" action="javascript:void(0);">
+    <div class="control-group">
+        <label class="control-label" for="companyName">companyName</label>
+        <div class="controls">
+            <input class="span4" type="text" id="companyName" name="companyName" placeholder="companyName" value="<%=model.companyName?model.companyName:''%>">
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="companyNature">companyNature</label>
+        <div class="controls">
+            <input class="span4" type="text" id="companyNature" name="companyNature" placeholder="companyNature" value="<%=model.companyNature?model.companyNature:''%>">
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="jobNature">jobNature</label>
+        <div class="controls">
+            <input class="span4" type="text" id="jobNature" name="jobNature" placeholder="jobNature" value="<%=model.jobNature?model.jobNature:''%>">
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="duty">duty</label>
+        <div class="controls">
+            <input class="span4" type="text" id="duty" name="duty" placeholder="duty" value="<%=model.duty?model.duty:''%>">
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="beginDate">beginDate</label>
+        <div class="controls">
+            <div class="line input-append date" id="dp-beginDate" data-date-format="yyyy-mm-dd">
+                <input class="span4" type="text" id="beginDate" name="beginDate" placeholder="beginDate" value="<%=model.beginDate?model.beginDate:''%>" >
+                <span class="add-on"><i class="icon-th"></i></span>
+            </div>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="endDate">endDate</label>
+        <div class="controls">
+            <div class="line input-append date" id="dp-endDate" data-date-format="yyyy-mm-dd">
+                <input class="span4" type="text" id="endDate" name="endDate" placeholder="endDate" value="<%=model.endDate?model.endDate:''%>" >
+                <span class="add-on"><i class="icon-th"></i></span>
+            </div>
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="controls">
+            <button type="submit" class="btn" id="save">Save</button>
+            <button type="submit" class="btn" id="delete">Delete</button>
+        </div>
+    </div>
+</form>

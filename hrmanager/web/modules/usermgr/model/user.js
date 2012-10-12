@@ -24,12 +24,8 @@ define(
                 options = options || {};
                 options.url = model.methodToURL[method.toLowerCase()];
                 if(method==='delete'){
-                    if(model.get('id')){
-                        options.data = JSON.stringify(model);
-                        options.contentType = 'application/json; charset=UTF-8';
-                    } else {
-                        return;
-                    }
+                    options.data = JSON.stringify(model);
+                    options.contentType = 'application/json; charset=UTF-8';
                 }
                 Backbone.sync(method, model, options);
             }

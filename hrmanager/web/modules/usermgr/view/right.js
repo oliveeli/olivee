@@ -16,6 +16,8 @@ define([
 
     return Backbone.View.extend({
 
+        className: 'full-fill-div',
+
         events: {
             'click #create': 'createUser'
         },

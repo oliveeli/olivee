@@ -4,38 +4,33 @@ package com.olivee.hrmanager.web.dao;
 
 import static org.hibernate.criterion.Example.create;
 
+import java.util.ArrayList;
 import java.util.List;
-
-import javax.naming.InitialContext;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.hibernate.Criteria;
 import org.hibernate.LockMode;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.olivee.hrmanager.web.entity.HrAwardWinning;
+import com.olivee.hrmanager.web.entity.HrEmployee;
 
 /**
  * Home object for domain model class HrAwardWinning.
- * @see com.olivee.hrmanager.web.dao.HrAwardWinning
+ * @see com.olivee.hrmanager.web.entity.HrAwardWinning
  * @author Hibernate Tools
  */
+@Repository
 public class HrAwardWinningHome {
 
 	private static final Log log = LogFactory.getLog(HrAwardWinningHome.class);
 
-	private final SessionFactory sessionFactory = getSessionFactory();
-
-	protected SessionFactory getSessionFactory() {
-		try {
-			return (SessionFactory) new InitialContext()
-					.lookup("SessionFactory");
-		} catch (Exception e) {
-			log.error("Could not locate SessionFactory in JNDI", e);
-			throw new IllegalStateException(
-					"Could not locate SessionFactory in JNDI");
-		}
-	}
+	@Autowired
+	private SessionFactory sessionFactory;
 
 	public void persist(HrAwardWinning transientInstance) {
 		log.debug("persisting HrAwardWinning instance");
@@ -99,7 +94,7 @@ public class HrAwardWinningHome {
 		try {
 			HrAwardWinning instance = (HrAwardWinning) sessionFactory
 					.getCurrentSession().get(
-							"com.olivee.hrmanager.web.dao.HrAwardWinning", id);
+							"com.olivee.hrmanager.web.entity.HrAwardWinning", id);
 			if (instance == null) {
 				log.debug("get successful, no instance found");
 			} else {
@@ -118,13 +113,34 @@ public class HrAwardWinningHome {
 			List<HrAwardWinning> results = (List<HrAwardWinning>) sessionFactory
 					.getCurrentSession()
 					.createCriteria(
-							"com.olivee.hrmanager.web.dao.HrAwardWinning")
+							"com.olivee.hrmanager.web.entity.HrAwardWinning")
 					.add(create(instance)).list();
 			log.debug("find by example successful, result size: "
 					+ results.size());
 			return results;
 		} catch (RuntimeException re) {
 			log.error("find by example failed", re);
+			throw re;
+		}
+	}
+	
+	public List<HrAwardWinning> findByUserId(String userid) {
+		log.debug("finding HrAwardWinning by user id instance by example");
+		try {
+			if(userid==null || userid.trim().equals("")){
+				return new ArrayList<HrAwardWinning>();
+			}
+			@SuppressWarnings("unchecked")
+			List<HrAwardWinning> results = (List<HrAwardWinning>) sessionFactory
+					.getCurrentSession()
+					.createCriteria("com.olivee.hrmanager.web.entity.HrAwardWinning")
+					.add(Restrictions.eq("employeeid", userid))
+					.list();
+			log.debug("find by user id successful, result size: "
+					+ results.size());
+			return results;
+		} catch (RuntimeException re) {
+			log.error("find by user id failed", re); 
 			throw re;
 		}
 	}

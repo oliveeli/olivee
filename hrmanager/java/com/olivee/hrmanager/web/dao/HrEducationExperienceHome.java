@@ -4,6 +4,7 @@ package com.olivee.hrmanager.web.dao;
 
 import static org.hibernate.criterion.Example.create;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.naming.InitialContext;
@@ -12,31 +13,26 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.LockMode;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
+import com.olivee.hrmanager.web.entity.HrAwardWinning;
 import com.olivee.hrmanager.web.entity.HrEducationExperience;
 
 /**
  * Home object for domain model class HrEducationExperience.
- * @see com.olivee.hrmanager.web.dao.HrEducationExperience
+ * @see com.olivee.hrmanager.web.entity.HrEducationExperience
  * @author Hibernate Tools
  */
+@Repository
 public class HrEducationExperienceHome {
 
 	private static final Log log = LogFactory
 			.getLog(HrEducationExperienceHome.class);
 
-	private final SessionFactory sessionFactory = getSessionFactory();
-
-	protected SessionFactory getSessionFactory() {
-		try {
-			return (SessionFactory) new InitialContext()
-					.lookup("SessionFactory");
-		} catch (Exception e) {
-			log.error("Could not locate SessionFactory in JNDI", e);
-			throw new IllegalStateException(
-					"Could not locate SessionFactory in JNDI");
-		}
-	}
+	@Autowired
+	private SessionFactory sessionFactory;
 
 	public void persist(HrEducationExperience transientInstance) {
 		log.debug("persisting HrEducationExperience instance");
@@ -100,7 +96,7 @@ public class HrEducationExperienceHome {
 		try {
 			HrEducationExperience instance = (HrEducationExperience) sessionFactory
 					.getCurrentSession()
-					.get("com.olivee.hrmanager.web.dao.HrEducationExperience",
+					.get("com.olivee.hrmanager.web.entity.HrEducationExperience",
 							id);
 			if (instance == null) {
 				log.debug("get successful, no instance found");
@@ -121,13 +117,34 @@ public class HrEducationExperienceHome {
 			List<HrEducationExperience> results = (List<HrEducationExperience>) sessionFactory
 					.getCurrentSession()
 					.createCriteria(
-							"com.olivee.hrmanager.web.dao.HrEducationExperience")
+							"com.olivee.hrmanager.web.entity.HrEducationExperience")
 					.add(create(instance)).list();
 			log.debug("find by example successful, result size: "
 					+ results.size());
 			return results;
 		} catch (RuntimeException re) {
 			log.error("find by example failed", re);
+			throw re;
+		}
+	}
+	
+	public List<HrEducationExperience> findByUserId(String userid) {
+		log.debug("finding HrEducationExperience by user id instance by example");
+		try {
+			if(userid==null || userid.trim().equals("")){
+				return new ArrayList<HrEducationExperience>();
+			}
+			@SuppressWarnings("unchecked")
+			List<HrEducationExperience> results = (List<HrEducationExperience>) sessionFactory
+					.getCurrentSession()
+					.createCriteria("com.olivee.hrmanager.web.entity.HrEducationExperience")
+					.add(Restrictions.eq("employeeid", userid))
+					.list();
+			log.debug("find by user id successful, result size: "
+					+ results.size());
+			return results;
+		} catch (RuntimeException re) {
+			log.error("find by user id failed", re); 
 			throw re;
 		}
 	}
