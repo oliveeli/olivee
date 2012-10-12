@@ -20,7 +20,7 @@ define([
         events: {
             'click':'click',
             'click #edit': 'edit',
-            'click #delete': 'delete'
+            'click #delete': 'del'
         },
 
         initialize: function(){
@@ -49,7 +49,7 @@ define([
             this.trigger('edit', this.model);
         },
 
-        delete: function(event){
+        del: function(event){
             event.stopPropagation();
         }
 
