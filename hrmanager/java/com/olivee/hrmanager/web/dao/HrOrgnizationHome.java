@@ -10,6 +10,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.LockMode;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -25,12 +26,8 @@ public class HrOrgnizationHome {
 
 	private static final Log log = LogFactory.getLog(HrOrgnizationHome.class);
 
+	@Autowired
 	private SessionFactory sessionFactory;
-
-	 @Autowired
-	 public void setSessionFactory(SessionFactory sessionFactory) {
-	     this.sessionFactory = sessionFactory;
-	 }
 
 	public void persist(HrOrgnization transientInstance) {
 		log.debug("persisting HrOrgnization instance");
@@ -64,10 +61,26 @@ public class HrOrgnizationHome {
 			throw re;
 		}
 	}
+	
+	public void deleteDependence(HrOrgnization persistentInstance) {
+		log.debug("deleting dependence HrOrgnization instance");
+		try {
+			List<HrOrgnization> childs = this.findByParentId(persistentInstance.getId());
+			for(HrOrgnization ho:childs){
+				this.delete(ho);
+			}
+			sessionFactory.getCurrentSession().delete(persistentInstance);
+			log.debug("delete dependence successful");
+		} catch (RuntimeException re) {
+			log.error("delete dependence failed", re);
+			throw re;
+		}
+	}
 
 	public void delete(HrOrgnization persistentInstance) {
 		log.debug("deleting HrOrgnization instance");
 		try {
+			this.deleteDependence(persistentInstance);
 			sessionFactory.getCurrentSession().delete(persistentInstance);
 			log.debug("delete successful");
 		} catch (RuntimeException re) {
@@ -120,6 +133,23 @@ public class HrOrgnizationHome {
 			return results;
 		} catch (RuntimeException re) {
 			log.error("find by example failed", re);
+			throw re;
+		}
+	}
+	
+	public List<HrOrgnization> findByParentId(String parentId) {
+		log.debug("finding HrOrgnization instance by parentId");
+		try {
+			List<HrOrgnization> results = (List<HrOrgnization>) sessionFactory
+					.getCurrentSession()
+					.createCriteria(
+							"com.olivee.hrmanager.web.entity.HrOrgnization")
+					.add(Restrictions.eq("superid", parentId)  ).list();
+			log.debug("find by parentId successful, result size: "
+					+ results.size());
+			return results;
+		} catch (RuntimeException re) {
+			log.error("find by parentId failed", re);
 			throw re;
 		}
 	}

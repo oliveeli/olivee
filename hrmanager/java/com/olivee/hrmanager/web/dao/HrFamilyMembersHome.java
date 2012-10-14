@@ -4,6 +4,7 @@ package com.olivee.hrmanager.web.dao;
 
 import static org.hibernate.criterion.Example.create;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.naming.InitialContext;
@@ -12,30 +13,25 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.LockMode;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
+import com.olivee.hrmanager.web.entity.HrEducationExperience;
 import com.olivee.hrmanager.web.entity.HrFamilyMembers;
 
 /**
  * Home object for domain model class HrFamilyMembers.
- * @see com.olivee.hrmanager.web.dao.HrFamilyMembers
+ * @see com.olivee.hrmanager.web.entity.HrFamilyMembers
  * @author Hibernate Tools
  */
+@Repository
 public class HrFamilyMembersHome {
 
 	private static final Log log = LogFactory.getLog(HrFamilyMembersHome.class);
 
-	private final SessionFactory sessionFactory = getSessionFactory();
-
-	protected SessionFactory getSessionFactory() {
-		try {
-			return (SessionFactory) new InitialContext()
-					.lookup("SessionFactory");
-		} catch (Exception e) {
-			log.error("Could not locate SessionFactory in JNDI", e);
-			throw new IllegalStateException(
-					"Could not locate SessionFactory in JNDI");
-		}
-	}
+	@Autowired
+	private SessionFactory sessionFactory;
 
 	public void persist(HrFamilyMembers transientInstance) {
 		log.debug("persisting HrFamilyMembers instance");
@@ -99,7 +95,7 @@ public class HrFamilyMembersHome {
 		try {
 			HrFamilyMembers instance = (HrFamilyMembers) sessionFactory
 					.getCurrentSession().get(
-							"com.olivee.hrmanager.web.dao.HrFamilyMembers", id);
+							"com.olivee.hrmanager.web.entity.HrFamilyMembers", id);
 			if (instance == null) {
 				log.debug("get successful, no instance found");
 			} else {
@@ -118,13 +114,34 @@ public class HrFamilyMembersHome {
 			List<HrFamilyMembers> results = (List<HrFamilyMembers>) sessionFactory
 					.getCurrentSession()
 					.createCriteria(
-							"com.olivee.hrmanager.web.dao.HrFamilyMembers")
+							"com.olivee.hrmanager.web.entity.HrFamilyMembers")
 					.add(create(instance)).list();
 			log.debug("find by example successful, result size: "
 					+ results.size());
 			return results;
 		} catch (RuntimeException re) {
 			log.error("find by example failed", re);
+			throw re;
+		}
+	}
+	
+	public List<HrFamilyMembers> findByUserId(String userid) {
+		log.debug("finding HrFamilyMembers by user id instance by example");
+		try {
+			if(userid==null || userid.trim().equals("")){
+				return new ArrayList<HrFamilyMembers>();
+			}
+			@SuppressWarnings("unchecked")
+			List<HrFamilyMembers> results = (List<HrFamilyMembers>) sessionFactory
+					.getCurrentSession()
+					.createCriteria("com.olivee.hrmanager.web.entity.HrFamilyMembers")
+					.add(Restrictions.eq("employeeid", userid))
+					.list();
+			log.debug("find by user id successful, result size: "
+					+ results.size());
+			return results;
+		} catch (RuntimeException re) {
+			log.error("find by user id failed", re); 
 			throw re;
 		}
 	}

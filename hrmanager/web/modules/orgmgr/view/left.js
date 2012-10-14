@@ -2,7 +2,7 @@
  * Author: 李军
  * Date: 12-9-25
  * Time: 下午3:29
- * 远方软件有限公司
+ *
  */
 define([
     'jquery',
@@ -12,15 +12,25 @@ define([
 ], function($, _, Backbone, OrgTreeView){
     return Backbone.View.extend({
 
-        className: 'split-left',
-
         initialize: function(){
-
+            _.extend(this, Backbone.Events);
+            _.bindAll(this, 'selectOrg', 'selectRoot');
         },
 
         render: function(){
-            $(this.el).append($(new OrgTreeView().render().el));
+            var treeView = new OrgTreeView().render();
+            $(this.el).append($(treeView.el));
+            treeView.on('selectedNode', this.selectOrg);
+            treeView.on('selectedRoot', this.selectRoot);
             return this;
+        },
+
+        selectOrg: function(nodeView){
+            this.trigger('selectOrg', nodeView.model);
+        },
+
+        selectRoot: function(nodeView){
+            this.trigger('selectRoot', nodeView.model);
         }
     });
 });

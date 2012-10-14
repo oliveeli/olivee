@@ -1,0 +1,13 @@
+.user-nav-tabs{
+    position: absolute;
+    width: 100%;
+    min-width: 600px;
+}
+.user-tab-content{
+    position: absolute;
+    top: 40px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    overflow: auto;
+}

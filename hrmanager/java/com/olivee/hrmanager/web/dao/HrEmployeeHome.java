@@ -6,12 +6,14 @@ import static org.hibernate.criterion.Example.create;
 
 import java.util.List;
 
-import javax.naming.InitialContext;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.hibernate.Criteria;
 import org.hibernate.LockMode;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.olivee.hrmanager.web.entity.HrEmployee;
 
@@ -20,22 +22,13 @@ import com.olivee.hrmanager.web.entity.HrEmployee;
  * @see com.olivee.hrmanager.web.dao.HrEmployee
  * @author Hibernate Tools
  */
+@Repository
 public class HrEmployeeHome {
 
 	private static final Log log = LogFactory.getLog(HrEmployeeHome.class);
 
-	private final SessionFactory sessionFactory = getSessionFactory();
-
-	protected SessionFactory getSessionFactory() {
-		try {
-			return (SessionFactory) new InitialContext()
-					.lookup("SessionFactory");
-		} catch (Exception e) {
-			log.error("Could not locate SessionFactory in JNDI", e);
-			throw new IllegalStateException(
-					"Could not locate SessionFactory in JNDI");
-		}
-	}
+	@Autowired
+	private SessionFactory sessionFactory;
 
 	public void persist(HrEmployee transientInstance) {
 		log.debug("persisting HrEmployee instance");
@@ -99,7 +92,7 @@ public class HrEmployeeHome {
 		try {
 			HrEmployee instance = (HrEmployee) sessionFactory
 					.getCurrentSession().get(
-							"com.olivee.hrmanager.web.dao.HrEmployee", id);
+							"com.olivee.hrmanager.web.entity.HrEmployee", id);
 			if (instance == null) {
 				log.debug("get successful, no instance found");
 			} else {
@@ -117,13 +110,32 @@ public class HrEmployeeHome {
 		try {
 			List<HrEmployee> results = (List<HrEmployee>) sessionFactory
 					.getCurrentSession()
-					.createCriteria("com.olivee.hrmanager.web.dao.HrEmployee")
+					.createCriteria("com.olivee.hrmanager.web.entity.HrEmployee")
 					.add(create(instance)).list();
 			log.debug("find by example successful, result size: "
 					+ results.size());
 			return results;
 		} catch (RuntimeException re) {
 			log.error("find by example failed", re);
+			throw re;
+		}
+	}
+
+	public List<HrEmployee> findByOrganizationId(String orgid) {
+		log.debug("finding HrEmployee by organization id instance by example");
+		try {
+			com.olivee.hrmanager.web.entity.HrEmployee a = null;
+			Criteria criteria = sessionFactory
+					.getCurrentSession()
+					.createCriteria("com.olivee.hrmanager.web.entity.HrEmployee");
+			if(orgid!=null && !orgid.trim().equals(""))
+				criteria.add(Restrictions.eq("orgid", orgid));
+			List<HrEmployee> results = (List<HrEmployee>) criteria.list();
+			log.debug("find by organization id successful, result size: "
+					+ results.size());
+			return results;
+		} catch (RuntimeException re) {
+			log.error("find by organization id failed", re); 
 			throw re;
 		}
 	}

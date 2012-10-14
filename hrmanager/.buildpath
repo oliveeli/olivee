@@ -1,1 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?><buildpath></buildpath>
+<?xml version="1.0" encoding="UTF-8"?><buildpath>	<buildpathentry kind="src" path="java"/>	<buildpathentry kind="con" path="org.eclipse.dltk.mod.launching.INTERPRETER_CONTAINER"/>	<buildpathentry kind="con" path="org.ebayopensource.vjet.eclipse.core.JSNATIVE_CONTAINER/JS Native Types"/>	<buildpathentry kind="con" path="org.ebayopensource.vjet.eclipse.core.BROWSER_CONTAINER/Browser SDK"/></buildpath>
