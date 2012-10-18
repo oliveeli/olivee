@@ -20,6 +20,8 @@ DROP TABLE IF EXISTS HR_WORK_EXPERIENCE;
 
 DROP TABLE IF EXISTS SYS_CODE;
 
+DROP TABLE IF EXISTS SYS_IMAGE;
+
 /*==============================================================*/
 /* Table: HR_AWARD_WINNING                                      */
 /*==============================================================*/
@@ -157,4 +159,16 @@ CREATE TABLE SYS_CODE
 );
 
 ALTER TABLE SYS_CODE COMMENT '系统代码';
+
+/*==============================================================*/
+/* Table: SYS_IMAGE                                              */
+/*==============================================================*/
+CREATE TABLE SYS_IMAGE
+(
+   ID                   VARCHAR(32) NOT NULL COMMENT '唯一ID',
+   IMG_DATA             LONGTEXT COMMENT '图片类容',
+   PRIMARY KEY (ID)
+);
+
+ALTER TABLE SYS_IMAGE COMMENT '系统图片';
 

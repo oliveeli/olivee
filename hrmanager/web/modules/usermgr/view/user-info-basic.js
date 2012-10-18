@@ -83,7 +83,13 @@ define([
         },
 
         uploadAvatar: function(){
-            $(this.el).append(new UploadPicView().render());
+            var uploadView = new UploadPicView().render();
+            $(this.el).append($(uploadView.el));
+            uploadView.on('confirm', this.showAvatar, this);
+        },
+
+        showAvatar: function(model){
+            this.$('#user-image').attr('src', model.get('data'));
         }
 
     });

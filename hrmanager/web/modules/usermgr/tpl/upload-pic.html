@@ -3,9 +3,14 @@
     <h3>Upload Image</h3>
 </div>
 <div class="modal-body">
-    <img src="image/a.jpg" class="crop-target" />
+    <div class="crop-container">
+        <img id="crop-target" class="crop-target" />
+    </div>
+    <input type="file" id="file-selector" multiple>
+    <canvas />
 </div>
 <div class="modal-footer">
+    <a class="btn btn-danger" href="#" id="getData">getData</a>
     <a class="btn btn-danger" href="#" id="confirm">Confirm</a>
     <a class="btn" href="#" id="cancel">Cancel</a>
 </div>
