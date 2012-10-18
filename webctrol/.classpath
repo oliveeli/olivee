@@ -8,5 +8,6 @@
 	<classpathentry kind="lib" path="lib/jackson-core-2.0.6.jar"/>
 	<classpathentry kind="lib" path="lib/jackson-core-asl-1.9.9.jar"/>
 	<classpathentry kind="lib" path="lib/jackson-databind-2.0.6.jar" sourcepath="/Applications/java/FasterXML-jackson-databind-d895335/src/main/java"/>
+	<classpathentry kind="lib" path="lib/commons-fileupload-1.2.2.jar"/>
 	<classpathentry kind="output" path="classes"/>
 </classpath>
