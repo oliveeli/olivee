@@ -1,4 +1,4 @@
-package com.olivee.hrmanager.web.action.upload;
+package com.olivee.utils.image;
 
 import java.io.*;
 import java.awt.*;
@@ -7,7 +7,7 @@ import java.awt.Graphics;
 import java.awt.color.ColorSpace;
 import javax.imageio.ImageIO;
 
-public class ImageCut {
+public class ImageCutUtil {
 	
 	/** 
      * 图像切割（改）     * 
