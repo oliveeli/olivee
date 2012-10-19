@@ -6,8 +6,16 @@
     <div class="crop-container">
         <img id="crop-target" class="crop-target" />
     </div>
-    <input type="file" id="file-selector" multiple>
-    <canvas />
+    <form id="file-form" name="file-form" method="post" enctype="multipart/form-data" style="margin: 0;">
+        <input type="file" id="file-selector" name="file-selector" />
+    </form>
+    <div class="progress crop-upload-progress">
+        <div class="bar bar-success"></div>
+    </div>
+    <div class="alert alert-error crop-message">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>Error!</strong> <span id="message-text"></span>
+    </div>
 </div>
 <div class="modal-footer">
     <a class="btn btn-danger" href="#" id="getData">getData</a>

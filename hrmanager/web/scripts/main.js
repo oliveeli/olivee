@@ -9,6 +9,7 @@ require.config({
     paths : {
         'text': 'lib/require/text',
         'jquery' : 'lib/jquery/jquery-1.8.1',
+        'jquery.form' : 'lib/jquery/jquery.form',
         'jquery.jcrop' : 'lib/jquery/jcrop/js/jquery.Jcrop',
         'jquery.jcrop-canvas': 'lib/jquery/jcrop/js/jquery.jcrop-canvas',
         'backbone' : 'lib/backbone/backbone',
@@ -22,6 +23,9 @@ require.config({
     },
 
     shim: {
+        'jquery.form': {
+            deps: ['jquery']
+        },
         'bootstrap': {
             deps: ['jquery']
         },
@@ -48,7 +52,8 @@ require.config({
 require([ 'jquery',
     'app',
     'bootstrap',
-    'bootstrap-datepicker'
+    'bootstrap-datepicker',
+    'jquery.form'
 ], function($, App) {
     $(function(){
         App.initialize();
