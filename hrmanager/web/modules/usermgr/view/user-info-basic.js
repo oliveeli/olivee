@@ -9,10 +9,11 @@ define([
     'underscore',
     'backbone',
     'backbone.syphon',
+    './../model/sys-image',
     'confirm-view',
     './upload-pic',
     'text!modules-path/usermgr/tpl/user-info-basic.html'
-], function($, _, Backbone, BackboneSyphon, ConfirmView, UploadPicView, UserDetailFormFormTpl){
+], function($, _, Backbone, BackboneSyphon, AvatarModel, ConfirmView, UploadPicView, UserDetailFormFormTpl){
 
     return Backbone.View.extend({
 
@@ -37,6 +38,7 @@ define([
         },
 
         render: function(){
+            var that = this;
             $(this.el).append(this.template({
                 model:this.model.toJSON(),
                 orgModel: this.options.orgModel.toJSON()
@@ -45,6 +47,16 @@ define([
             this.$('#dp-graduateDate').attr('data-date','2012-12-03');
             this.$('#dp-birthday').datepicker();
             this.$('#dp-graduateDate').datepicker();
+
+            var avatarModel = new AvatarModel();
+            if(this.model.get('avatarid')){
+                avatarModel.set('id', this.model.get('avatarid'));
+                avatarModel.fetch({
+                    success: function(model, resp){
+                        that.$('#user-image').attr('src', model.get('data'));
+                    }
+                });
+            }
 
             return this;
         },
@@ -85,10 +97,15 @@ define([
         uploadAvatar: function(){
             var uploadView = new UploadPicView().render();
             $(this.el).append($(uploadView.el));
-            uploadView.on('confirm', this.showAvatar, this);
+            uploadView.on('confirm', this.setAvatar, this);
         },
 
-        showAvatar: function(model){
+        renderAvatar: function(){
+
+        },
+
+        setAvatar: function(model){
+            this.model.set('avatarid', model.get('id'));
             this.$('#user-image').attr('src', model.get('data'));
         }
 

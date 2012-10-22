@@ -80,22 +80,23 @@
         </property>
         <property name="telephone1" type="string">
             <column name="TELEPHONE1" length="32">
-                <comment>&#168;&#168;?&#161;&#177;????&#161;&#177;?&#168;&#168;??1</comment>
             </column>
         </property>
         <property name="telephone2" type="string">
             <column name="TELEPHONE2" length="32">
-                <comment>&#168;&#168;?&#161;&#177;????&#161;&#177;?&#168;&#168;??2</comment>
             </column>
         </property>
         <property name="telephone3" type="string">
             <column name="TELEPHONE3" length="32">
-                <comment>&#168;&#168;?&#161;&#177;????&#161;&#177;?&#168;&#168;??3</comment>
             </column>
         </property>
         <property name="email" type="string">
             <column name="EMAIL" length="128">
-                <comment>?&#161;&#177;????&#168;&#166;???????&#161;&#227;???</comment>
+            </column>
+        </property>
+        
+        <property name="avatarid" type="string">
+            <column name="AVATARID" length="32">
             </column>
         </property>
     </class>

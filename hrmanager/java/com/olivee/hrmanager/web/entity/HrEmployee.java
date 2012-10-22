@@ -28,6 +28,7 @@ public class HrEmployee implements java.io.Serializable {
 	private String telephone2;
 	private String telephone3;
 	private String email;
+	private String avatarid;
 
 	public HrEmployee() {
 	}
@@ -214,6 +215,14 @@ public class HrEmployee implements java.io.Serializable {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getAvatarid() {
+		return avatarid;
+	}
+
+	public void setAvatarid(String avatarid) {
+		this.avatarid = avatarid;
 	}
 
 }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.olivee.hrmanager.web.entity.SysImage;
@@ -20,8 +21,15 @@ public class MainAction {
 
 	@RequestMapping("/sys/image/create")
 	@ResponseBody
-	public String save(@RequestBody SysImage instance) {
+	public SysImage save(@RequestBody SysImage instance) {
 		instance.setId(UUID.randomUUID().toString().replace("-", ""));
-		return sysImageLogic.save(instance).getId();
+		sysImageLogic.save(instance);
+		return instance;
+	}
+	
+	@RequestMapping("/sys/image/get")
+	@ResponseBody
+	public SysImage get(@RequestParam("id") String id) {
+		return sysImageLogic.get(id);
 	}
 }

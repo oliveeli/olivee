@@ -14,14 +14,15 @@ define(
         return Backbone.Model.extend({
 
             methodToURL: {
+                'read': 'sys/image/get',
                 'create': 'sys/image/create'
             },
 
             sync: function(method, model, options) {
                 options = options || {};
                 options.url = model.methodToURL[method.toLowerCase()];
-                if(method==='delete'){
-                    options.data = JSON.stringify(model);
+                if(method==='delete' || method==='read'){
+                    options.url += '?id=' + model.get('id');
                     options.contentType = 'application/json; charset=UTF-8';
                 }
                 Backbone.sync(method, model, options);

@@ -12,9 +12,10 @@ define(
         "router",
         './view/nav',
         './../modules/usermgr/view/main',
-        './../modules/orgmgr/view/main'
+        './../modules/orgmgr/view/main',
+        './../modules/sys/install/view/main'
     ],
-    function($, _, Backbone, Router, NavigationView, UserManagerView, OrgManagerView) {
+    function($, _, Backbone, Router, NavigationView, UserManagerView, OrgManagerView, SysInstallView) {
 
         var nav = function(action){
             switch (action){
@@ -23,6 +24,9 @@ define(
                     break;
                 case 'org':
                     new OrgManagerView().render();
+                    break;
+                case 'sys-install':
+                    new SysInstallView().render();
                     break;
                 default :
                     break;

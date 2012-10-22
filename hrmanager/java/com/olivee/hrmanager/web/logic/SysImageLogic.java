@@ -16,4 +16,8 @@ public class SysImageLogic {
 		sysImageHome.persist(sysImage);
 		return sysImage;
 	}
+
+	public SysImage get(String id) {
+		return sysImageHome.get(id);
+	}
 }

@@ -2,6 +2,7 @@ package com.olivee.hrmanager.web.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import org.apache.commons.logging.Log;
@@ -39,6 +40,33 @@ public class SysImageHome {
 			log.error("persist failed", re);
 			throw re;
 		}
+	}
+
+	public SysImage get(final String id) {
+		log.debug("persisting SysImage instance");
+		final SysImage sysImage = new SysImage();
+		try {
+			sessionFactory.getCurrentSession().doWork(new Work(){
+				@Override
+				public void execute(Connection connection) throws SQLException {
+					PreparedStatement stmt = connection.prepareStatement("select img_data from SYS_IMAGE where id = ?");
+					stmt.setString(1, id);
+					ResultSet rs = stmt.executeQuery();
+					if(rs.next()){
+						sysImage.setId(id);
+						sysImage.setData(rs.getString("img_data"));
+					}
+				}
+			});
+			log.debug("persist successful");
+			if(sysImage.getId()!=null){
+				return sysImage;
+			}
+		} catch (RuntimeException re) {
+			log.error("persist failed", re);
+			throw re;
+		}
+		return null;
 	}
 
 }

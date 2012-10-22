@@ -78,6 +78,7 @@ CREATE TABLE HR_EMPLOYEE
    TELEPHONE2           VARCHAR(32) COMMENT '联系电话2',
    TELEPHONE3           VARCHAR(32) COMMENT '联系电话3',
    EMAIL                VARCHAR(128) COMMENT '电子邮件地址',
+   AVATARID             VARCHAR(32) COMMENT '头像ID',
    PRIMARY KEY (ID)
 );
 
