@@ -16,7 +16,7 @@ define(
             model: OrganizationModel,
 
             initialize: function(options){
-                this.url = 'organization/list?parentId=' + options.parentId;
+                this.url = 'action/organization/list?parentId=' + options.parentId;
             }
 
 

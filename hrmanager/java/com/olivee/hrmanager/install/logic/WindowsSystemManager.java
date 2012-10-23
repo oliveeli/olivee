@@ -1,4 +1,4 @@
-package com.olivee.hrmanager.web.logic.sys.install;
+package com.olivee.hrmanager.install.logic;
 
 public class WindowsSystemManager implements SystemManager{
 

@@ -13,7 +13,7 @@ define(
         './view/nav',
         './../modules/usermgr/view/main',
         './../modules/orgmgr/view/main',
-        './../modules/sys/install/view/main'
+        './sys/install/view/main'
     ],
     function($, _, Backbone, Router, NavigationView, UserManagerView, OrgManagerView, SysInstallView) {
 
@@ -35,9 +35,13 @@ define(
 
         return {
             initialize: function(){
-                $('#menu').append($(new NavigationView().render().el));
-                var app_router = Router.initialize();
-                app_router.on('router', nav);
+                if(typeof(SYS_INSTALL)!=='undefined' && SYS_INSTALL){
+                    nav('sys-install');
+                } else {
+                    $('#menu').append($(new NavigationView().render().el));
+                    var app_router = Router.initialize();
+                    app_router.on('router', nav);
+                }
             }
         };
     }

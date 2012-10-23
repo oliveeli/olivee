@@ -1,4 +1,4 @@
-package com.olivee.hrmanager.web.logic.sys.install;
+package com.olivee.hrmanager.install.logic;
 
 import java.lang.management.ManagementFactory;
 import java.lang.management.OperatingSystemMXBean;

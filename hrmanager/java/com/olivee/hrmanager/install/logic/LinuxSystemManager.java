@@ -1,4 +1,4 @@
-package com.olivee.hrmanager.web.logic.sys.install;
+package com.olivee.hrmanager.install.logic;
 
 import java.io.IOException;
 
@@ -13,7 +13,6 @@ public class LinuxSystemManager implements SystemManager{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
 	}
 
 }
