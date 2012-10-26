@@ -39,22 +39,7 @@
 	<mvc:default-servlet-handler/>
 	
 	<aop:aspectj-autoproxy proxy-target-class="true" />
-	
-<!--
-	<bean id="jacksonDateMapper" class="com.olivee.web.spring.DateMapper">
-        <property name="mask" value="yyyy-MM-dd HH:mm:ss" />
-    </bean>
-	
-	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
-		<property name="messageConverters">
-		  <list>
-			<bean id="jacksonMessageConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
-				<property name="objectMapper" ref="jacksonDateMapper" />
-			</bean>
-		  </list>
-		</property>
-	</bean>
-  -->	
+
 	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations" value="classpath:datasource.properties"/>
 	</bean>
