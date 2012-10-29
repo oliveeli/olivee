@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="olivee-log">
+    <property environment="env"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.5"/>
+    <property name="source" value="1.5"/>
+	<property name="classes.dir" value="classes"></property>
+	<property name="dist.dir" value="dist"></property>
+	<property name="jar.name" value="${ant.project.name}.jar"/>
+	
+    <path id="tomcat.libraryclasspath">
+        <pathelement location="../../../java/apache-tomcat-6.0.33/lib/annotations-api.jar"/>
+        <pathelement location="../../../java/apache-tomcat-6.0.33/lib/catalina-ant.jar"/>
+        <pathelement location="../../../java/apache-tomcat-6.0.33/lib/catalina-ha.jar"/>
+        <pathelement location="../../../java/apache-tomcat-6.0.33/lib/catalina-tribes.jar"/>
+        <pathelement location="../../../java/apache-tomcat-6.0.33/lib/catalina.jar"/>
+        <pathelement location="../../../java/apache-tomcat-6.0.33/lib/ecj-3.3.1.jar"/>
+        <pathelement location="../../../java/apache-tomcat-6.0.33/lib/el-api.jar"/>
+        <pathelement location="../../../java/apache-tomcat-6.0.33/lib/jasper-el.jar"/>
+        <pathelement location="../../../java/apache-tomcat-6.0.33/lib/jasper.jar"/>
+        <pathelement location="../../../java/apache-tomcat-6.0.33/lib/jsp-api.jar"/>
+        <pathelement location="../../../java/apache-tomcat-6.0.33/lib/servlet-api.jar"/>
+        <pathelement location="../../../java/apache-tomcat-6.0.33/lib/tomcat-coyote.jar"/>
+        <pathelement location="../../../java/apache-tomcat-6.0.33/lib/tomcat-dbcp.jar"/>
+        <pathelement location="../../../java/apache-tomcat-6.0.33/lib/tomcat-i18n-es.jar"/>
+        <pathelement location="../../../java/apache-tomcat-6.0.33/lib/tomcat-i18n-fr.jar"/>
+        <pathelement location="../../../java/apache-tomcat-6.0.33/lib/tomcat-i18n-ja.jar"/>
+    </path>
+	
+	
+    <path id="libpath">
+		<fileset dir="web/WEB-INF/lib">
+			<include name="**/*.jar" />
+		</fileset>
+    </path>
+	
+    <path id="webctrol.classpath">
+        <pathelement location="${classes.dir}"/>
+        <path refid="tomcat.libraryclasspath"/>
+    	<path refid="libpath"/>
+    </path>
+	
+    <target name="cleanclass">
+        <delete dir="${classes.dir}"/>
+    </target>
+	
+    <target name="cleandist">
+    	<delete dir="${dist.dir}"/>
+    </target>
+	
+    <target depends="cleanclass, cleandist" name="cleanall"/>
+    	
+    <target name="init" depends="cleanall">
+        <mkdir dir="${classes.dir}"/>
+    	<mkdir dir="${dist.dir}"/>
+        <copy includeemptydirs="false" todir="${classes.dir}">
+            <fileset dir="java">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+	
+    <target depends="init" name="compile">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="${classes.dir}" includeantruntime="false" source="${source}" target="${target}">
+            <src path="java/src"/>
+            <classpath refid="webctrol.classpath"/>
+        </javac>
+    </target>
+	
+	<target name="manifest">
+		<echo>${ant.project.name} 生成MANIFEST.MF</echo>
+		<manifest file="${classes.dir}/MANIFEST.MF">	
+		    <attribute name="Implementation-Title" value="olivee_li"/>			
+		</manifest>
+	</target>
+
+
+    <target name="jar" depends="compile, manifest">
+    	<echo>${ant.project.name} 生成jar打包文件</echo>
+        <jar basedir="${classes.dir}" manifest="${classes.dir}/MANIFEST.MF" compress="true" jarfile="${dist.dir}/${jar.name}">        	
+			<include name="**"/>			
+        	<exclude name="MANIFEST.MF"/>
+        </jar>
+    </target>	
+	
+    <target name="delebuildtmp">
+    	<delete dir="${classes.dir}"/>
+    </target>
+	
+	<target name="build" depends="jar, delebuildtmp" />
+</project>
