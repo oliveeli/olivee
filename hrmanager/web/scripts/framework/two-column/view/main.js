@@ -8,7 +8,7 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'text!framework/two-column/tpl/main.html'
+    'text!scripts/framework/two-column/tpl/main.html'
 ], function($, _, Backbone, MainView){
 
     return Backbone.View.extend({

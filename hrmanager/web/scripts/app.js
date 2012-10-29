@@ -9,7 +9,7 @@ define(
         "jquery",
         "underscore",
         "backbone",
-        "router",
+        "./router",
         './view/nav',
         './../modules/usermgr/view/main',
         './../modules/orgmgr/view/main',

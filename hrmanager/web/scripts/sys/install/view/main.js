@@ -10,7 +10,7 @@ define([
     'backbone',
     './cfg-db',
     './cfg-admin',
-    'text!sys/install/tpl/main.html'
+    'text!scripts/sys/install/tpl/main.html'
 ], function($, _, Backbone, ConfigDbView, ConfigAdminView, MainTpl){
 
     return Backbone.View.extend({

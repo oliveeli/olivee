@@ -9,8 +9,8 @@ define([
     'underscore',
     'backbone',
     'backbone.syphon',
-    'text!sys/install/tpl/cfg-db.html',
-    'text!tpl/alert-error.html'
+    'text!scripts/sys/install/tpl/cfg-db.html',
+    'text!scripts/tpl/alert-error.html'
 ], function($, _, Backbone, BackboneSyphon, ViewTpl, AlertErrorTpl){
 
     return Backbone.View.extend({

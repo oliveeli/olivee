@@ -8,7 +8,7 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'text!framework/confirm/tpl/main.html'
+    'text!scripts/framework/confirm/tpl/main.html'
 ], function($, _, Backbone, ConfirmTpl){
 
     return Backbone.View.extend({

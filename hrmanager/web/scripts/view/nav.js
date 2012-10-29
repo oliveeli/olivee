@@ -8,7 +8,7 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'text!tpl/nav.html'
+    'text!scripts/tpl/nav.html'
 ], function($, _, Backbone, NavigationTpl){
     return Backbone.View.extend({
 
