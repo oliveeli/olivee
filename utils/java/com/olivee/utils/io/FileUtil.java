@@ -13,4 +13,5 @@ public class FileUtil {
 		}
 		return fileName.substring(pointIndex + 1);
 	}
+	
 }

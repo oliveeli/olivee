@@ -11,24 +11,28 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
+import com.olivee.hrmanager.SystemProperties;
+
 public class UserDetailService implements UserDetailsService {
 
-    @Override
+	@Override
     public UserDetails loadUserByUsername(String username)
             throws UsernameNotFoundException, DataAccessException {
+		String userName = (String)SystemProperties.get(SystemProperties.SUPPER_USER_NAME);
+		String userPassword = (String)SystemProperties.get(SystemProperties.SUPPER_USER_PASSWORD);
+		if(userName==null || userName.trim().equals("") || userPassword==null || userPassword.trim().equals("")){
+			throw new UsernameNotFoundException("not config administrators!");
+		}
+		if(!userName.equals(username)){
+			throw new UsernameNotFoundException(username + "user not found!");
+		}
+		
         Collection<GrantedAuthority> auths=new ArrayList<GrantedAuthority>();
-        GrantedAuthorityImpl auth2=new GrantedAuthorityImpl("ROLE_ADMIN");
-        auths.add(auth2);
-        if(username.equals("robin1")){
-            auths=new ArrayList<GrantedAuthority>();
-            GrantedAuthorityImpl auth1=new GrantedAuthorityImpl("ROLE_ROBIN");
-            auths.add(auth1);
-        }
+        auths.add(new GrantedAuthorityImpl("ROLE_ADMIN"));
         
-//        User(String username, String password, boolean enabled, boolean accountNonExpired,
-//                    boolean credentialsNonExpired, boolean accountNonLocked, Collection<GrantedAuthority> authorities) {
         User user = new User(username,
-                "robin", true, true, true, true, auths);
+        		userPassword, true, true, true, true, auths);
+        
         return user;
     }
     

@@ -39,7 +39,7 @@ public class StartUpServlet extends HttpServlet {
 			Properties prop = new Properties();
 			prop.load(in);
 			
-			SystemProperties.put(SystemProperties.SUPPER_USER_NAME, prop.get("name"));
+			SystemProperties.put(SystemProperties.SUPPER_USER_NAME, prop.get("user"));
 			SystemProperties.put(SystemProperties.SUPPER_USER_PASSWORD, prop.get("password"));
 		} catch (Throwable e) {
 			log.error("load admin config failed!", e);

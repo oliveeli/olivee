@@ -38,6 +38,7 @@ public class SystemFilter implements Filter {
 		Object isInit = SystemProperties.get(SystemProperties.IS_INIT);
 		if(!(Boolean)isInit && servletPath.equalsIgnoreCase("/index.html")){
 			hResp.sendRedirect(hReq.getContextPath()  + "/install.html");
+			return;
 		}
 		chain.doFilter(request, response);
 	}

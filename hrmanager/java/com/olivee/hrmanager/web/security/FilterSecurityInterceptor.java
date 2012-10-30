@@ -19,6 +19,7 @@ public class FilterSecurityInterceptor extends AbstractSecurityInterceptor
 		implements Filter {
 
 	private FilterInvocationSecurityMetadataSource securityMetadataSource;
+	org.springframework.security.web.access.intercept.FilterSecurityInterceptor a;
 
 	/**
 	 * Method that is actually called by the filter chain. Simply delegates to

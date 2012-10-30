@@ -19,6 +19,7 @@ import com.olivee.hrmanager.web.action.ResultMessage;
 import com.olivee.hrmanager.web.action.ResultType;
 import com.olivee.utils.database.DatabaseVender;
 import com.olivee.utils.database.JDBCConnectionUtil;
+import com.olivee.utils.security.MD5Encoder;
 
 @Controller("sys.install.MainAction")
 public class MainAction {
@@ -97,7 +98,8 @@ public class MainAction {
 		Properties props = new Properties();
 
 		props.setProperty("user", user.getName());
-		props.setProperty("password", user.getPassword());
+
+		props.setProperty("password", MD5Encoder.encode(user.getPassword()));
 		
 		String classesPath = (String) SystemProperties
 				.get(SystemProperties.WEB_INF_CLASSES_PATH);

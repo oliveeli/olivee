@@ -29,7 +29,7 @@ public class OliveeAccessDecisionManager implements AccessDecisionManager {
             ConfigAttribute ca=ite.next();
             String needRole=((SecurityConfig)ca).getAttribute();
             for(GrantedAuthority ga:authentication.getAuthorities()){
-                if(needRole.equals(ga.getAuthority())){  //ga is user's role.
+                if(needRole.equals(ga.getAuthority())){  
                     return;
                 }
             }
