@@ -43,6 +43,7 @@ public class OliveeAppender extends AppenderSkeleton implements Appender{
 	    event.getMDCCopy();
 	    event.getRenderedMessage();
 	    event.getThrowableStrRep();
+	    event.getLocationInformation().getClassName();
 		
 	    LogData data = new LogData();
 	    data.setMessage(event.getMessage().toString());

@@ -3,7 +3,7 @@ package com.olivee.log.log4j;
 
 public class LogData {
 
-	private String userId, userName, userIp, hostIp, hostName, system, model, catalog, level, threadName, message;
+	private String userId, userName, userIp, hostIp, hostName, system, model, catalog, level, threadName, message, locationInformation;
 	
 	private String[] throwableStrRep;
 	
@@ -115,6 +115,14 @@ public class LogData {
 		this.throwableStrRep = throwableStrRep;
 	}
 	
+	public String getLocationInformation() {
+		return locationInformation;
+	}
+
+	public void setLocationInformation(String locationInformation) {
+		this.locationInformation = locationInformation;
+	}
+
 	public String getThrowableStr() {
 		if(throwableStrRep!=null){
 			StringBuffer sb = new StringBuffer();
