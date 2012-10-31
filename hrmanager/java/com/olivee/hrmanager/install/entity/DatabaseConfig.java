@@ -1,7 +1,7 @@
 package com.olivee.hrmanager.install.entity;
 
 public class DatabaseConfig {
-	String vender, address, port, instance , user, password;
+	String vender, address, port, instance, user, password;
 
 	public String getVender() {
 		return vender;
@@ -50,6 +50,11 @@ public class DatabaseConfig {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
+
+	public String toString() {
+		return super.toString() + "{" + getVender() + "|" + getAddress() + "|"
+				+ getPort() + "|" + getInstance() + "|" + getUser() + "|"
+				+ getPassword() + "}";
+	}
+
 }

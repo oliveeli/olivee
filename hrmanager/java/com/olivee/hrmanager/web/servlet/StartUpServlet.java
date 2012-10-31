@@ -1,6 +1,5 @@
 package com.olivee.hrmanager.web.servlet;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
@@ -28,7 +27,7 @@ public class StartUpServlet extends HttpServlet {
 	 */
 	public void init(ServletConfig config) throws ServletException {
 		
-		log.info("init system properties!");
+		log.debug("init system properties");
 		
 		String contextPath = config.getServletContext().getRealPath("");
 		SystemProperties.put(SystemProperties.WEB_CONTEXT_PATH, contextPath); 
@@ -42,9 +41,11 @@ public class StartUpServlet extends HttpServlet {
 			SystemProperties.put(SystemProperties.SUPPER_USER_NAME, prop.get("user"));
 			SystemProperties.put(SystemProperties.SUPPER_USER_PASSWORD, prop.get("password"));
 		} catch (Throwable e) {
-			log.error("load admin config failed!", e);
+			log.error("load admin config failed", e);
 			SystemProperties.put(SystemProperties.IS_INIT, false);
 		}
+		
+		log.debug("init system properties end");
 		
 	}
 

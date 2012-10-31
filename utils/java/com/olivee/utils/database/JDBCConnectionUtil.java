@@ -20,8 +20,7 @@ public class JDBCConnectionUtil {
 			String serverAddress, String serverPort, String dbName,
 			String jdbcUser, String jdbcPassword)
 			throws ClassNotFoundException, SQLException {
-		return getConnection(vender, jdbcUser, jdbcPassword, serverAddress,
-				serverPort, dbName, 0);
+		return getConnection(vender, serverAddress, serverPort, dbName, jdbcUser, jdbcPassword, 0);
 	}
 
 	/**

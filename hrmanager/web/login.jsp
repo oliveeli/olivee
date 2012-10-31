@@ -42,7 +42,7 @@ require([ 'jquery',
     <div id="page">
         <div id="main-model" class="modal hide fade">
             <div class="modal-header">
-                <h3>System Login</h3>
+                <h3>LOGIN</h3>
             </div>
             <div class="modal-body" style="min-width: 300px; min-height: 300px;">
              
@@ -57,21 +57,27 @@ require([ 'jquery',
                 <form name='f' class="form-horizontal login-form" action="<c:url value='j_spring_security_check' />"
                     method='POST'>
                     <div class="control-group">
-                        <label class="control-label" for="j_username">User</label>
+                        <label class="control-label" for="j_username">NAME</label>
                         <div class="controls">
-                            <input type="text" id="j_username" name="j_username" placeholder="User Name">
+							<div class="input-prepend">
+							  <span class="add-on"><i class="icon-user"></i></span>
+							  <input type="text" id="j_username" name="j_username" placeholder="User Name">
+							</div>
                         </div>
                     </div>
                     <div class="control-group">
-                        <label class="control-label" for="j_password">Password</label>
+                        <label class="control-label" for="j_password">PASSWORD</label>
                         <div class="controls">
-                            <input type="password" id="j_password" name="j_password" placeholder="User Password" value="">
+							<div class="input-prepend">
+							  <span class="add-on"><i class="icon-certificate"></i></span>
+							  <input type="password" id="j_password" name="j_password" placeholder="User Password" value="">
+							</div>
                         </div>
                     </div>
                     <div class="control-group">
                         <div class="controls">
-                            <a class="btn" href="#" id="login">login</a>
-                            <a class="btn" href="#" id="reset">reset</a>
+                            <a class="btn" href="#" id="login">Login</a>
+                            <a class="btn" href="#" id="reset">Reset</a>
                         </div>
                     </div>
                 </form>

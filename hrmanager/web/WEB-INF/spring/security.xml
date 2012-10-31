@@ -24,7 +24,9 @@
             authentication-failure-url="/login.jsp?error=true"
             default-target-url="/index.html" />
         <logout logout-success-url="/login.jsp" />
+        <!--
 		<session-management invalid-session-url="/sessionTimeout.jsp" />
+		-->
         <http-basic />
         <custom-filter before="FILTER_SECURITY_INTERCEPTOR" ref="myFilter" />
     </http>
