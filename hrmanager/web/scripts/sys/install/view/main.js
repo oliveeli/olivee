@@ -90,7 +90,7 @@ define([
                 this.renderCurrentStepView();
             } else if(this.currentStepIndex + 1 === this.steps.length){
                 this.currentStepIndex++;
-                this.$('.modal-body').html('<h1>Configuration Complete! Please restart server now!</h1>');
+                this.$('.modal-body').html('<h1>系统配置完成! 请重启web服务!</h1>');
                 //this.$('.modal-body').append('<a class="btn btn-large btn-success" href="#" id="restart">Restart Server Now!</a>');
                 this.$('#previous').hide();
                 this.$('#next').hide();

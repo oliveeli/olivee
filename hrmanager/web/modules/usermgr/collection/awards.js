@@ -16,7 +16,7 @@ define(
             model: AwardModel,
 
             initialize: function(options){
-                this.url = 'user/award/list?userId=' + options.userId;
+                this.url = 'action/user/award/list?userId=' + options.userId;
             }
 
         });

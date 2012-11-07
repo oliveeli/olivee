@@ -16,7 +16,7 @@ define(
             model: AwardModel,
 
             initialize: function(options){
-                this.url = 'user/vocational/certificate/list?userId=' + options.userId;
+                this.url = 'action/user/vocational/certificate/list?userId=' + options.userId;
             }
 
         });

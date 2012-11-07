@@ -14,10 +14,10 @@ define(
         return Backbone.Model.extend({
 
             methodToURL: {
-                'read': 'user/family/get',
-                'create': 'user/family/create',
-                'update': 'user/family/update',
-                'delete': 'user/family/remove'
+                'read': 'action/user/family/get',
+                'create': 'action/user/family/create',
+                'update': 'action/user/family/update',
+                'delete': 'action/user/family/remove'
             },
 
             sync: function(method, model, options) {

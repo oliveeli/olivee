@@ -14,10 +14,10 @@ define(
         return Backbone.Model.extend({
 
             methodToURL: {
-                'read': 'user/vocational/certificate/get',
-                'create': 'user/vocational/certificate/create',
-                'update': 'user/vocational/certificate/update',
-                'delete': 'user/vocational/certificate/remove'
+                'read': 'action/user/vocational/certificate/get',
+                'create': 'action/user/vocational/certificate/create',
+                'update': 'action/user/vocational/certificate/update',
+                'delete': 'action/user/vocational/certificate/remove'
             },
 
             sync: function(method, model, options) {

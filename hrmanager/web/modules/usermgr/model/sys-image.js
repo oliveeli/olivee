@@ -14,8 +14,8 @@ define(
         return Backbone.Model.extend({
 
             methodToURL: {
-                'read': 'sys/image/get',
-                'create': 'sys/image/create'
+                'read': 'action/sys/image/get',
+                'create': 'action/sys/image/create'
             },
 
             sync: function(method, model, options) {

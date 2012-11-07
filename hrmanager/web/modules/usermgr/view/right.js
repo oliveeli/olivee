@@ -29,6 +29,9 @@ define([
         render: function(){
             $(this.el).html(RightTpl);
             this.renderUserList();
+            if(this.options.orgModel.id==='' || !this.options.orgModel.id){
+            	this.$('#create').addClass('disabled');
+            }
             return this;
         },
 
@@ -43,7 +46,10 @@ define([
             userListView.on('edit', this.edit, this);
         },
 
-        createUser: function(){
+        createUser: function(event){
+            if($(event.target).hasClass('disabled')){
+            	return;
+            }
             if(this.userInfoView){
                 this.userInfoView.remove();
             }

@@ -1,44 +1,44 @@
 <form class="form-horizontal" action="javascript:void(0);">
     <div class="control-group">
-        <label class="control-label" for="school">school</label>
+        <label class="control-label" for="school">学校</label>
         <div class="controls">
-            <input class="span4" type="text" id="school" name="school" placeholder="school" value="<%=model.school?model.school:''%>">
+            <input class="span4" type="text" id="school" name="school" placeholder="" value="<%=model.school?model.school:''%>">
         </div>
     </div>
     <div class="control-group">
-        <label class="control-label" for="specialty">specialty</label>
+        <label class="control-label" for="specialty">专业</label>
         <div class="controls">
-            <input class="span4" type="text" id="specialty" name="specialty" placeholder="specialty" value="<%=model.specialty?model.specialty:''%>">
+            <input class="span4" type="text" id="specialty" name="specialty" placeholder="" value="<%=model.specialty?model.specialty:''%>">
         </div>
     </div>
     <div class="control-group">
-        <label class="control-label" for="educationalLevel">educationalLevel</label>
+        <label class="control-label" for="educationalLevel">学历</label>
         <div class="controls">
-            <input class="span4" type="text" id="educationalLevel" name="educationalLevel" placeholder="educationalLevel" value="<%=model.educationalLevel?model.educationalLevel:''%>">
+            <input class="span4" type="text" id="educationalLevel" name="educationalLevel" placeholder="" value="<%=model.educationalLevel?model.educationalLevel:''%>">
         </div>
     </div>
     <div class="control-group">
-        <label class="control-label" for="beginDate">beginDate</label>
+        <label class="control-label" for="beginDate">开始时间</label>
         <div class="controls">
             <div class="line input-append date" id="dp-beginDate" data-date-format="yyyy-mm-dd">
-                <input class="span4" type="text" id="beginDate" name="beginDate" placeholder="beginDate" value="<%=model.beginDate?model.beginDate:''%>" >
+                <input class="span4" type="text" id="beginDate" name="beginDate" placeholder="" value="<%=model.beginDate?model.beginDate:''%>" >
                 <span class="add-on"><i class="icon-th"></i></span>
             </div>
         </div>
     </div>
     <div class="control-group">
-        <label class="control-label" for="endDate">endDate</label>
+        <label class="control-label" for="endDate">结束时间</label>
         <div class="controls">
             <div class="line input-append date" id="dp-endDate" data-date-format="yyyy-mm-dd">
-                <input class="span4" type="text" id="endDate" name="endDate" placeholder="endDate" value="<%=model.endDate?model.endDate:''%>" >
+                <input class="span4" type="text" id="endDate" name="endDate" placeholder="" value="<%=model.endDate?model.endDate:''%>" >
                 <span class="add-on"><i class="icon-th"></i></span>
             </div>
         </div>
     </div>
     <div class="control-group">
         <div class="controls">
-            <button type="submit" class="btn" id="save">Save</button>
-            <button type="submit" class="btn" id="delete">Delete</button>
+            <button type="submit" class="btn" id="save">保存</button>
+            <button type="submit" class="btn" id="delete">删除</button>
         </div>
     </div>
 </form>

@@ -117,6 +117,7 @@ define([
 
         showAward: function(){
             if(this.model.isNew()){
+            	alert('请先保存基本信息!');
                 return;
             }
             this.renderAward();
@@ -125,6 +126,7 @@ define([
 
         showEducation: function(){
             if(this.model.isNew()){
+            	alert('请先保存基本信息!');
                 return;
             }
             this.renderEducation();
@@ -133,6 +135,7 @@ define([
 
         showFamily: function(){
             if(this.model.isNew()){
+            	alert('请先保存基本信息!');
                 return;
             }
             this.renderFamily();
@@ -141,6 +144,7 @@ define([
 
         showVocationalCertificate: function(){
             if(this.model.isNew()){
+            	alert('请先保存基本信息!');
                 return;
             }
             this.renderVocationalCertificate();
@@ -149,6 +153,7 @@ define([
 
         showWorkExperience: function(){
             if(this.model.isNew()){
+            	alert('请先保存基本信息!');
                 return;
             }
             this.renderWorkExperience();

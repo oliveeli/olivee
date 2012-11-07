@@ -1,32 +1,32 @@
 <form class="form-horizontal">
     <div class="control-group">
-        <label class="control-label" for="address">Host</label>
+        <label class="control-label" for="address">ip或host地址：</label>
         <div class="controls">
-            <input type="text" id="address" name="address" placeholder="Database Server Host Name" value="<%=model.address?model.address:''%>" >
+            <input type="text" id="address" name="address" placeholder="" value="<%=model.address?model.address:''%>" >
         </div>
     </div>
     <div class="control-group">
-        <label class="control-label" for="port">Port</label>
+        <label class="control-label" for="port">端口：</label>
         <div class="controls">
-            <input type="text" id="port" name="port" placeholder="Database Server Port" value="<%=model.port?model.port:''%>">
+            <input type="text" id="port" name="port" placeholder="" value="<%=model.port?model.port:''%>">
         </div>
     </div>
     <div class="control-group">
-        <label class="control-label" for="instance">Instance</label>
+        <label class="control-label" for="instance">实例名：</label>
         <div class="controls">
-            <input type="text" id="instance" name="instance" placeholder="Database Server Instance" value="<%=model.instance?model.instance:''%>">
+            <input type="text" id="instance" name="instance" placeholder="" value="<%=model.instance?model.instance:''%>">
         </div>
     </div>
     <div class="control-group">
-        <label class="control-label" for="user">User</label>
+        <label class="control-label" for="user">用户名：</label>
         <div class="controls">
-            <input type="text" id="user" name="user" placeholder="Database User Name" value="<%=model.user?model.user:''%>">
+            <input type="text" id="user" name="user" placeholder="" value="<%=model.user?model.user:''%>">
         </div>
     </div>
     <div class="control-group">
-        <label class="control-label" for="password">Password</label>
+        <label class="control-label" for="password">密码：</label>
         <div class="controls">
-            <input type="text" id="password" name="password" placeholder="Database User Password" value="<%=model.password?model.password:''%>">
+            <input type="text" id="password" name="password" placeholder="" value="<%=model.password?model.password:''%>">
         </div>
     </div>
 </form>

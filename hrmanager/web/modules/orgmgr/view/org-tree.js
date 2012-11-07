@@ -27,7 +27,7 @@ define([
 
         render: function(){
             var root = new OrgTreeNodeView({
-                model: new OrgTreeNodeModel({name: 'Organization Tree', id: '', isRoot: true})
+                model: new OrgTreeNodeModel({name: '组织机构树', id: '', isRoot: true})
             }).render();
 
         	$(this.el).append($(root.el));

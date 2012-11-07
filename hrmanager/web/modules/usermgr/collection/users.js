@@ -16,7 +16,7 @@ define(
             model: UserModel,
 
             initialize: function(options){
-                this.url = 'user/list?organizationId=' + options.organizationId;
+                this.url = 'action/user/list?organizationId=' + options.organizationId;
             }
 
         });
