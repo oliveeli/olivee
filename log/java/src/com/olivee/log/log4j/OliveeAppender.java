@@ -5,6 +5,7 @@ import java.net.UnknownHostException;
 
 import org.apache.log4j.Appender;
 import org.apache.log4j.AppenderSkeleton;
+import org.apache.log4j.LogManager;
 import org.apache.log4j.spi.LoggingEvent;
 
 import com.olivee.log.log4j.web.MDCFilter;
@@ -38,7 +39,10 @@ public class OliveeAppender extends AppenderSkeleton implements Appender{
 	}
 
 	@Override
-	protected void append(LoggingEvent event) {	    
+	protected void append(LoggingEvent event) {
+//		if(LogManager.getRootLogger().equals(event.getLogger()) && "USER.ACTION".equals(event.getLogger().getName())){
+//			return;
+//		}
 	    event.getThreadName();
 	    event.getMDCCopy();
 	    event.getRenderedMessage();
