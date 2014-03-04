@@ -5,7 +5,7 @@ import java.util.List;
 
 public class TreeNode<K> {
 	private K userObject;
-	private List<TreeNode<K>> child;
+	private List<TreeNode<K>> child; 
 
 	public K getUserObject() {
 		return userObject;
